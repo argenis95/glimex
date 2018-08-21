@@ -1,48 +1,31 @@
-<html>
-	<head>
-		<title>Laravel</title>
-		
-		<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+@extends('layouts.master')
 
-		<style>
-			body {
-				margin: 0;
-				padding: 0;
-				width: 100%;
-				height: 100%;
-				color: #B0BEC5;
-				display: table;
-				font-weight: 100;
-				font-family: 'Lato';
-			}
+@section('title', 'Home')
 
-			.container {
-				text-align: center;
-				display: table-cell;
-				vertical-align: middle;
-			}
+@section('content')
+<div class="home_container">
+		<div class="background_image" style="background-image:url(images/empresas.jpg)"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="home_content">
+                        <div class="home_title">¡Alcanza el siguiente nivel!</div>
+                        <div class="home_text">Ponemos un mundo de posiblidades en tus manos ¿Hasta  dónde quieres llegar? ¡Nosotros te apoyamos!</div>
+                        <div class="button home_button"><a href="#"><span>Saber más</span><span>Saber más</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
 
-			.content {
-				text-align: center;
-				display: inline-block;
-			}
+<div class="resume">
+	<p>En un mundo tan versátil y dinámico como el de hoy, hablar varios idiomas permite a cada individuo adaptarse a los constantes cambios que estamos experimentando día con día.</p>
+	<p>Poseer estas hablidades sin duda te otorgará ventajas importantes por sobre tus competidores, tanto a nivel individual como organizacional.</p>
+	<p>Hoy más que nunca, debes considerar la posibilidad de dominar otros idiomas, esta es la puesta que te dará acceso a un mejor nivel de vida; Elimina las fronteras del lenguaje en tu proyecto de vida, proyecta internacionalmente tu organización, conoce nuevos destinos alrededor del mundo o haz nuevos amigos, con GLI de tu lado.</p>
+</div>
 
-			.title {
-				font-size: 96px;
-				margin-bottom: 40px;
-			}
+<div class="learn_more">
+<div class="button home_button"><a href="#"><span>Aprender más</span><span>Aprender más</span></a></div>
+</div>
 
-			.quote {
-				font-size: 24px;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<div class="content">
-				<div class="title">GLI de México</div>
-				<div class="quote">{{ Inspiring::quote() }}</div>
-			</div>
-		</div>
-	</body>
-</html>
+@endsection
