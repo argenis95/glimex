@@ -12,7 +12,7 @@
 }
 .footer_content
 {
-	padding-bottom: 100px;
+	padding-bottom: 10rem;
 }
 .footer_about
 {
@@ -20,7 +20,7 @@
 }
 .footer .logo a
 {
-	color: #FFFFFF;
+	color: rgb(202, 32, 32);
 }
 .footer_about_text
 {
@@ -40,14 +40,9 @@
 }
 .footer_social ul li a i
 {
-	color: #FFFFFF;
-}
-.copyright
-{
-	font-size: 12px;
-	font-style: italic;
-	color: rgba(255,255,255,0.48);
-	margin-top: 54px;
+	color: #3177a5;
+	text-shadow: 1px 1px 1px rgb(0, 0, 0);
+
 }
 .footer_contact
 {
@@ -225,12 +220,12 @@
 {
 	font-size: 14px;
 	font-weight: 600;
-	color: #3177a5;
+	color: #a0a1a1;
 }
 .footer_phone i
 {
 	display: inline-block;
 	vertical-align: middle;
 	font-size: 20px;
-	color: #3177a5;
+	color: #a0a1a1;
 }

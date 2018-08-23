@@ -63,7 +63,7 @@ ul
 p
 {
 	font-family: 'Montserrat', sans-serif;
-	font-size: 1,28rem;
+	font-size: 1.28em;
 	line-height: 2;
 	font-weight: 400;
 	color: #929191;
@@ -592,11 +592,12 @@ section
 }
 .home_button
 {
-	margin-top: 36px;
+	margin: 4em;
 }
 
 .resume
 {
+	color: #aaa;
 	padding: 2.2rem;
 	text-align:justify;
 }

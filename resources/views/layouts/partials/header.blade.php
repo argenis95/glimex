@@ -7,21 +7,19 @@
                     <div class="col">
                         <div class="header_top_content d-flex flex-row align-items-center justify-content-start">
                             <div class="logo">
-                                <a href="#">GLI
-                                    <span></span>
-                                </a>
+                                    <a href="/"><img src="images/logo.png" height="67.5" width="78.75"></a>
                             </div>
                             <div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
                                 <div class="header_top_nav">
                                     <ul class="d-flex flex-row align-items-center justify-content-start">
                                         <li>
-                                            <a href="#">Help Desk</a>
+                                            <a href="#">Menú 3</a>
                                         </li>
                                         <li>
-                                            <a href="#">Emergency Services</a>
+                                            <a href="#">Menú 2</a>
                                         </li>
                                         <li>
-                                            <a href="#">Appointment</a>
+                                            <a href="#">Menú 1</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -48,19 +46,13 @@
                                     <nav class="main_nav">
                                         <ul class="d-flex flex-row align-items-center justify-content-start">
                                             <li class="active">
-                                                <a href="index.html">Home</a>
+                                                <a href="/">Inicio</a>
                                             </li>
                                             <li>
                                                 <a href="about.html">About Us</a>
                                             </li>
                                             <li>
                                                 <a href="services.html">Services</a>
-                                            </li>
-                                            <li>
-                                                <a href="news.html">News</a>
-                                            </li>
-                                            <li>
-                                                <a href="contact.html">Contact</a>
                                             </li>
                                         </ul>
                                     </nav>
