@@ -11,10 +11,7 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('/contact', function()
-{
-    return 'Hello World';
-});
+Route::get('/about', 'PagesController@about');
 
 
 

@@ -53,7 +53,7 @@ div
 	position: relative;
 	-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 ul
 {
@@ -66,7 +66,7 @@ p
 	font-size: 1.28em;
 	line-height: 2;
 	font-weight: 400;
-	color: #929191;
+	color: #FFFFFF;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
@@ -569,6 +569,7 @@ section
 	top: 38%;
 	left: 0;
 	width: 100%;
+	padding: 5rem;
 }
 
 .home_title
@@ -610,6 +611,52 @@ section
     align-items: center;
     justify-content: center;
 }
+
+.about_table
+{
+	padding: 3rem;
+	text-align: justify;
+	margin: 1px;
+}
+p.col-title
+{
+	text-align: center;
+}
+
+/*********************************
+about
+*********************************/
+
+.about_container
+{
+	position: relative;
+	top: 38%;
+	left: 0;
+	width: 100%;
+	padding: 5rem;
+}
+
+.about_title
+{
+	font-size: 60px;
+	font-weight: 600;
+	color: #FFFFFF;
+	text-shadow: 1.3px 1.3px 1.3px rgb(0, 0, 0);
+	max-width: 570px;
+	line-height: 1.2;
+}
+.about_text
+{
+	font-size: 16px;
+	font-weight: 600;
+	color: #FFFFFF;
+	text-shadow: 1.3px 1.3px 1.3px rgb(0, 0, 0);
+	line-height: 1.875;
+	max-width: 480px;
+	margin-top: 25px;
+}
+
+
 
 /*********************************
 6. Info Boxes

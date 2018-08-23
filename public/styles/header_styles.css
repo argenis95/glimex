@@ -47,6 +47,10 @@
 	line-height: 0.75;
 	vertical-align: text-top;
 }
+p.name
+{
+padding: 1.5rem;
+}
 .header_top_nav ul li
 {
 	position: relative;

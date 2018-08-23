@@ -6,8 +6,9 @@
                 <div class="row">
                     <div class="col">
                         <div class="header_top_content d-flex flex-row align-items-center justify-content-start">
-                            <div class="logo">
+                            <div class="logo d-flex">
                                     <a href="/"><img src="images/logo.png" height="67.5" width="78.75"></a>
+                                    <p class="name">Global Language Instruction</p>                            
                             </div>
                             <div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
                                 <div class="header_top_nav">
@@ -49,10 +50,10 @@
                                                 <a href="/">Inicio</a>
                                             </li>
                                             <li>
-                                                <a href="about.html">About Us</a>
+                                                <a href="about">Acerca de nosotros</a>
                                             </li>
                                             <li>
-                                                <a href="services.html">Services</a>
+                                                <a href="services.html">Servicios</a>
                                             </li>
                                         </ul>
                                     </nav>
