@@ -598,9 +598,13 @@ section
 
 .resume
 {
-	color: #aaa;
+	color: rgb(0, 0, 0);
 	padding: 2.2rem;
 	text-align:justify;
+}
+
+p.resume{
+	color:black;
 }
 
 .learn_more
@@ -655,6 +659,67 @@ about
 	max-width: 480px;
 	margin-top: 25px;
 }
+
+.services_container
+{
+	position: relative;
+	top: 38%;
+	left: 0;
+	width: 100%;
+	padding: 10rem;
+	text-align: center;
+}
+
+.services_text
+{
+	font-size: 16px;
+	font-weight: 600;
+	color: black;
+	line-height: 1.875;
+	margin-top: 25px;
+	text-align: justify;
+}
+
+.services_title
+{
+	font-size: 60px;
+	font-weight: 600;
+	color: black;
+	line-height: 1.2;
+	padding: 1rem;
+}
+
+.services_subtitle{
+	font-size: 2rem;
+	font-weight: 600;
+	color: rgb(0,0,0);
+	line-height: 1.875;
+	margin-top: 25px;
+	text-align: center;
+}
+
+.icon_ref
+{
+	text-align:center;
+	padding-top: 1.5rem;
+	color: #3177a5;
+}
+
+.subtitle
+{
+	font-style: "bold";
+	font-size: 1.3rem;
+	font-weight: 600;
+	color: rgb(0,0,0);
+	line-height: 1.875;
+	margin-top: 25px;
+	text-align: justify;
+}
+p.list{
+	padding: 0.5rem;
+}
+
+
 
 
 

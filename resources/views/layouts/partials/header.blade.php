@@ -53,7 +53,7 @@
                                                 <a href="about">Acerca de nosotros</a>
                                             </li>
                                             <li>
-                                                <a href="services.html">Servicios</a>
+                                                <a href="services">Servicios</a>
                                             </li>
                                         </ul>
                                     </nav>
