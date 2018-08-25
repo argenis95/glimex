@@ -46,7 +46,7 @@
                                 <div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
                                     <nav class="main_nav">
                                         <ul class="d-flex flex-row align-items-center justify-content-start">
-                                            <li class="active">
+                                            <li>
                                                 <a href="/">Inicio</a>
                                             </li>
                                             <li>
@@ -57,14 +57,6 @@
                                             </li>
                                         </ul>
                                     </nav>
-                                    <div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
-                                        <form action="#" id="search_container_form" class="search_container_form">
-                                            <input type="text" class="search_container_input" placeholder="Search" required="required">
-                                            <button class="search_container_button">
-                                                <i class="fa fa-search" aria-hidden="true"></i>
-                                            </button>
-                                        </form>
-                                    </div>
                                 </div>
                             </div>
                         </div>

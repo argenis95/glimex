@@ -20,8 +20,8 @@
         <div class='super-container'>
             @include('layouts.partials.header')
             @yield('content')
-            @include('layouts.partials.footer')
         </div>
+        @include('layouts.partials.footer')
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="styles/bootstrap4/popper.js"></script>
         <script src="styles/bootstrap4/bootstrap.min.js"></script>

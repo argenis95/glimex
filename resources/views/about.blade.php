@@ -40,7 +40,7 @@
             <div class="col-6">
                 <div class="about_content">
                     <div class="about_title">¿Por qué GLI?</div>
-                    <div class="about_text">Nuestra metodología basada en las directrices del CEF (Common European Framwork o Modelo Común Europeo) ofrece atención especializada a grupos reducidos, lo que garantiza clases dinámicas y participativas lo que conlleva a un rápido aprendizaje. Nuestras clases son respaldadas por maestros experimentados y capacitados en el área, además de diferentes apoyos didácticos pensados para tus necesidades.</div>
+                    <div class="about_text">Nuestra metodología basada en las directrices del CEF (Common European Framwork o Modelo Común Europeo) ofrece atención especializada a grupos reducidos, lo que garantiza clases dinámicas y participativas lo que conlleva a un rápido aprendizaje. Nuestras clases son respaldadas por maestros experimentados y capacitados en el área, además de diferentes apoyos didácticos pensados para tus necesidades. Además, somos centro de exámenes autorizado por el <a href="https://www.trinitycollege.com/">Trinity College London.</a></div>
                 </div>
             </div>
             <div class="col-6">

@@ -31,6 +31,11 @@
 	-o-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
+
+.logo{
+	padding-top:2.5rem;
+	padding-bottom:2rem;
+}
 .logo a
 {
 	line-height: 0.75;

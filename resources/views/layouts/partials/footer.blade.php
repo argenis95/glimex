@@ -24,8 +24,9 @@
 									</ul>
 						</nav>
 						<div class="footer_phone ml-lg-auto">
-							<i class="fa fa-phone fa-3x" aria-hidden="true"></i>
-							<span>+34 586 778 8892</span>
+								<div class="copyright">
+										&copy;<script>document.write(new Date().getFullYear());</script> Global Language Instruction
+								</div>
 						</div>
 					</div>
 				</div>

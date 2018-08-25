@@ -11,7 +11,7 @@
                     <div class="home_content">
                         <div class="home_title">¡Alcanza el siguiente nivel!</div>
                         <div class="home_text">Ponemos un mundo de posiblidades en tus manos ¿Hasta  dónde quieres llegar? ¡Nosotros te apoyamos!</div>
-                        <div class="button home_button"><a href="services"><span>Saber más</span><span>Saber más</span></a></div>
+                        <div class="button home_button"><a href="about"><span>Saber más</span><span>Saber más</span></a></div>
                     </div>
                 </div>
                 <div class="col-6">
@@ -27,7 +27,7 @@
 </div>
 
 <div class="learn_more">
-<div class="button home_button"><a href="#"><span>Aprender más</span><span>Aprender más</span></a></div>
+<div class="button home_button"><a href="services"><span>Aprender más</span><span>Aprender más</span></a></div>
 </div>
 
 @endsection
