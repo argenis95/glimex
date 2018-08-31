@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\View\Factory;
 
 use Illuminate\Http\Request;
 
@@ -16,5 +17,10 @@ class PagesController extends Controller {
 	
 	public function services(){
 		return view('services');
+	}
+
+	public function login()
+	{
+		return view ('auth.login');
 	}
 }

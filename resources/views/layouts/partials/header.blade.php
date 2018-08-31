@@ -1,4 +1,13 @@
-
+<?php
+function LogCheck(){
+    if (Auth::check()){
+    echo "logged";
+    }
+    else {
+    echo "not logged"; 
+    }
+}
+?>
 <header class="header" id="header">
     <div>
         <div class="header_top">
@@ -14,10 +23,10 @@
                                 <div class="header_top_nav">
                                     <ul class="d-flex flex-row align-items-center justify-content-start">
                                         <li>
-                                            <a href="#">Menú 3</a>
+                                            <a href="login">Acceder</a>
                                         </li>
                                         <li>
-                                            <a href="#">Menú 2</a>
+                                            <a href="#"><?php LogCheck()?></a>
                                         </li>
                                         <li>
                                             <a href="#">Menú 1</a>
