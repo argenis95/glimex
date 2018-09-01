@@ -13,7 +13,7 @@ class UserTableSeeder extends Seeder
             'name'     => 'John',
             'last_name' => 'Doe',
             'email'    => '123@example.com',
-            'user_password' => Hash::make('12345'),
+            'password' => Hash::make('12345'),
         ));
     }
 

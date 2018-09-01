@@ -15,6 +15,8 @@
         <link rel="stylesheet" type="text/css" href="styles/header_styles.css">
         <link rel="stylesheet" type="text/css" href="styles/footer_styles.css">
         <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+        
     </head>
     <body>
         <div class='super-container'>
@@ -28,6 +30,10 @@
         <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
         <script src="plugins/easing/easing.js"></script>
         <script src="plugins/parallax-js-master/parallax.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
         <script src="js/custom.js"></script>
+        <script src="js/users_table.js"></script>
+        
     </body>
 </html>

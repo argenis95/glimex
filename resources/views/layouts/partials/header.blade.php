@@ -1,13 +1,3 @@
-<?php
-function LogCheck(){
-    if (Auth::check()){
-    echo "logged";
-    }
-    else {
-    echo "not logged"; 
-    }
-}
-?>
 <header class="header" id="header">
     <div>
         <div class="header_top">
@@ -22,11 +12,14 @@ function LogCheck(){
                             <div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
                                 <div class="header_top_nav">
                                     <ul class="d-flex flex-row align-items-center justify-content-start">
-                                        <li>
+                                        <li>@if (Auth::check())
+                                            <a href="logout">Hola, usuario</a>
+                                            @else
                                             <a href="login">Acceder</a>
+                                            @endif
                                         </li>
                                         <li>
-                                            <a href="#"><?php LogCheck()?></a>
+                                            <a href="#">Menú 2</a>
                                         </li>
                                         <li>
                                             <a href="#">Menú 1</a>
@@ -64,6 +57,11 @@ function LogCheck(){
                                             <li>
                                                 <a href="services">Servicios</a>
                                             </li>
+                                            @if (Auth::check())
+                                            <li>
+                                                <a href="user_management">Manejo de usuario</a>
+                                            </li>
+                                            @endif
                                         </ul>
                                     </nav>
                                 </div>

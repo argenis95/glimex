@@ -17,7 +17,14 @@ class AuthController extends Controller {
     {
         $email = Request::input('email');
         $password =Request::input('password');
-        $user = User::where('email', $email)->first();
+        if (Auth::attempt(['email' => $email, 'password' => $password]))
+        {
+            return redirect('/');
+        }
+        else{
+            return redirect('user/login')->with('message', 'Login Failed');
+        }
+        /*$user = User::where('email', $email)->first();
             if ($user != null && Hash::check($password, $user->password)){
                 Auth::login($user);
                 return redirect('/');
@@ -25,8 +32,13 @@ class AuthController extends Controller {
             }
             else{
                 return redirect('user/login')->with('message', 'Login Failed');
-            }
+            }*/
             
     }
 
+    public function logout(){
+    
+        Auth::logout();
+        return redirect('home');
+    }
 }
