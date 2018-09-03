@@ -6,7 +6,7 @@
                     <div class="col">
                         <div class="header_top_content d-flex flex-row align-items-center justify-content-start">
                             <div class="logo d-flex">
-                                    <a href="/"><img src="images/logo.png" height="67.5" width="78.75"></a>
+                                    <a href="/"><img src="/images/logo.png" height="67.5" width="78.75"></a>
                                     <p class="name">Global Language Instruction</p>                            
                             </div>
                             <div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
@@ -19,7 +19,7 @@
                                             @endif
                                         </li>
                                         <li>
-                                            <a href="#">Menú 2</a>
+                                            <a href="registerdone">Menú 2</a>
                                         </li>
                                         <li>
                                             <a href="#">Menú 1</a>

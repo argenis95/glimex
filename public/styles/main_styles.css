@@ -310,6 +310,10 @@ section
 	font-size: 9px;
 	opacity: 0;
 }
+
+.btn-register{
+	width: 100%;
+}
 .button:hover a span:last-child
 {
 	top: 50%;
