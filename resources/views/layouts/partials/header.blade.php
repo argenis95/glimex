@@ -13,13 +13,13 @@
                                 <div class="header_top_nav">
                                     <ul class="d-flex flex-row align-items-center justify-content-start">
                                         <li>@if (Auth::check())
-                                            <a href="logout">Hola, usuario</a>
+                                            <a href="/logout">Hola, usuario</a>
                                             @else
-                                            <a href="login">Acceder</a>
+                                            <a href="/login">Acceder</a>
                                             @endif
                                         </li>
                                         <li>
-                                            <a href="registerdone">Menú 2</a>
+                                            <a href="/registerdone">Menú 2</a>
                                         </li>
                                         <li>
                                             <a href="#">Menú 1</a>
@@ -52,14 +52,14 @@
                                                 <a href="/">Inicio</a>
                                             </li>
                                             <li>
-                                                <a href="about">Acerca de nosotros</a>
+                                                <a href="/about">Acerca de nosotros</a>
                                             </li>
                                             <li>
-                                                <a href="services">Servicios</a>
+                                                <a href="/services">Servicios</a>
                                             </li>
                                             @if (Auth::check())
                                             <li>
-                                                <a href="user_management">Manejo de usuario</a>
+                                                <a href="/user_management">Manejo de usuario</a>
                                             </li>
                                             @endif
                                         </ul>

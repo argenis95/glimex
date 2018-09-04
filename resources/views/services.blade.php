@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="services_container">
-    <div class="background_image" style="background-image:url(images/office.jpg)"></div>
+    <div class="background_image" style="/background-image:url(images/office.jpg)"></div>
 </div>
 <div class="container">
     <div class="services_content">

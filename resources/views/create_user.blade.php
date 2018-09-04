@@ -7,7 +7,7 @@
 <div class="p-4 container">
     <h1 class="text-dark pb-4">Registro</h1>
     <div class="services_content">
-        <form  method="POST" action="user_management">
+        <form  method="POST" action="/user_management">
             <div class="form-group">
                 <input type="text" class="form-control" name="name" placeholder="Nombres" required/>
             </div>

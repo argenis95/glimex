@@ -1,4 +1,4 @@
 
 
-{{ var_dump($register['user_type']) }}
+{{ var_dump($user) }}
 

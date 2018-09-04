@@ -21,6 +21,6 @@ $(function(){
 
     $('#users').on('click', '.edit', function() {
         var id = $(this).attr('data-id');
-        $(location).attr('href', '/user_management/edit/' + id);
+        $(location).attr('href', '/user_management/' + id);
     });
 });

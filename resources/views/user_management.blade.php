@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', '')
+@section('title', 'Manejo de usuarios')
 
 @section('content')
 
@@ -10,7 +10,7 @@
             <h1 class="text-dark">Usuarios</h1>
         </div>
         <div class="col-md-2 text-right pr-4">
-                <a href="create_user" title="Registrar nuevo usuario"><button class="btn-register btn m-1 btn-primary float-right">
+                <a href="/create_user" title="Registrar nuevo usuario"><button class="btn-register btn m-1 btn-primary float-right">
                     <i class="fa fa-plus" aria-hidden="true"></i>
                 </button></a>
         </div>

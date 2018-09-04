@@ -4,14 +4,14 @@
 
 @section('content')
 <div class="home_container">
-		<div class="background_image" style="background-image:url(images/empresas.jpg)"></div>
+		<div class="background_image" style="background-image:url(/images/empresas.jpg)"></div>
         <div class="container">
             <div class="row">
                 <div class="col-6">
                     <div class="home_content">
                         <div class="home_title">¡Alcanza el siguiente nivel!</div>
                         <div class="home_text">Ponemos un mundo de posiblidades en tus manos ¿Hasta  dónde quieres llegar? ¡Nosotros te apoyamos!</div>
-                        <div class="button home_button"><a href="about"><span>Saber más</span><span>Saber más</span></a></div>
+                        <div class="button home_button"><a href="/about"><span>Saber más</span><span>Saber más</span></a></div>
                     </div>
                 </div>
                 <div class="col-6">
@@ -27,7 +27,7 @@
 </div>
 
 <div class="learn_more">
-<div class="button home_button"><a href="services"><span>Aprender más</span><span>Aprender más</span></a></div>
+<div class="button home_button"><a href="/services"><span>Aprender más</span><span>Aprender más</span></a></div>
 </div>
 
 @endsection
