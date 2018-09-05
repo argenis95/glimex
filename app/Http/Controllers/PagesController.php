@@ -20,9 +20,6 @@ class PagesController extends Controller {
 		return view('services');
 	}
 
-	public function login()
-	{
-		return view ('auth.login');
-	}
+	
 
 }

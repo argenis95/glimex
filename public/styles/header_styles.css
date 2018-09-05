@@ -48,7 +48,7 @@
 {
 	position: relative;
 	font-size: 36px;
-	color: #3177a5;
+	color: #007bff;
 	line-height: 0.75;
 	vertical-align: text-top;
 }
@@ -80,7 +80,7 @@ color: #838383;
 }
 .header_top_nav ul li a:hover
 {
-	color: #3177a5;
+	color: #007bff;
 }
 .header_top_phone
 {
@@ -89,7 +89,7 @@ color: #838383;
 .header_top_phone i
 {
 	font-size: 22px;
-	color: #3177a5;
+	color: #007bff;
 	vertical-align: middle;
 	transform: translateY(-1px);
 }
@@ -131,7 +131,7 @@ color: #838383;
 .header_nav_container
 {
 	z-index: 1;
-	background: #3177a5;
+	background: #007bff;
 }
 .header_nav_content
 {
@@ -256,5 +256,5 @@ color: #838383;
 }
 .header_search:hover i
 {
-	color: #3177a5;
+	color: #007bff;
 }

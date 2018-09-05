@@ -51,7 +51,11 @@ class UserController extends Controller {
 		$user->user_type_id = $input['user_type'];
 		$user->save();
 		return redirect('user_management');
-
+	}
+	public function delete($id)
+	{
+		$user= User::findOrFail($id);
+		$user->delete();	
 	}
 	
 }

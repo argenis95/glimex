@@ -19,10 +19,10 @@ class AuthController extends Controller {
         $password =Request::input('password');
         if (Auth::attempt(['email' => $email, 'password' => $password]))
         {
-            return redirect('/');
+            return redirect('/user_management');
         }
         else{
-            return redirect('user/login')->with('message', 'Login Failed');
+            return redirect('/login')->with('message', 'Login Failed');
         }
         /*$user = User::where('email', $email)->first();
             if ($user != null && Hash::check($password, $user->password)){
@@ -35,10 +35,22 @@ class AuthController extends Controller {
             }*/
             
     }
+    public function login()
+	{
+		return view ('auth.login');
+	}
 
-    public function logout(){
+    public function logout()
+    {
     
         Auth::logout();
-        return redirect('home');
+        return redirect('/home');
+    }
+
+    public function user_type()
+    {
+        if (Auth::check()){
+           return Auth::user()->user_type_id;
+        }
     }
 }

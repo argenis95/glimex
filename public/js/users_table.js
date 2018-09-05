@@ -23,4 +23,30 @@ $(function(){
         var id = $(this).attr('data-id');
         $(location).attr('href', '/user_management/' + id);
     });
+    $('#users').on('click', '.delete', function(){
+        var id = $(this).attr('data-id');
+        bootbox.confirm({
+            title: "Borrar usuario",
+            message: "¿Seguro que quiere eliminar al usuario?",
+            buttons: {
+                cancel: {
+                    label: '<i class="fa fa-times"></i> Cancelar'
+                },
+                confirm: {
+                    label: '<i class="fa fa-check"></i> Confirmar'
+                }
+            },
+            callback: function (result) {
+                if (result) {
+                    $.ajax({
+                        method: 'DELETE',
+                        url: '/user_management/'+ id,
+                        success: function(){
+                            $(location).attr('href', '/user_management');
+                        }
+                    });
+                }
+            }
+        });
+    })
 });

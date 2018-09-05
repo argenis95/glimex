@@ -48,6 +48,12 @@
                                 <div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
                                     <nav class="main_nav">
                                         <ul class="d-flex flex-row align-items-center justify-content-start">
+                                            @if (Utilities::get_user_type()=='admin')
+                                            <li>
+                                                <a href="/user_management">Manejo de usuario</a>
+                                            </li>
+                                            @endif
+                                            @if (!Auth::check())
                                             <li>
                                                 <a href="/">Inicio</a>
                                             </li>
@@ -56,10 +62,6 @@
                                             </li>
                                             <li>
                                                 <a href="/services">Servicios</a>
-                                            </li>
-                                            @if (Auth::check())
-                                            <li>
-                                                <a href="/user_management">Manejo de usuario</a>
                                             </li>
                                             @endif
                                         </ul>

@@ -26,6 +26,8 @@
         @include('layouts.partials.footer')
         <script src="/js/jquery-3.3.1.min.js"></script>
         <script src="/styles/bootstrap4/popper.js"></script>
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
         <script src="/styles/bootstrap4/bootstrap.min.js"></script>
         <script src="/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
         <script src="/plugins/easing/easing.js"></script>

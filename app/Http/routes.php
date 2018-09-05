@@ -1,11 +1,15 @@
 <?php
 
+Route::get('/test', function(){
+    return Utilities::get_user_type();
+});
+
 
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/home', 'PagesController@index');
 Route::get('/services', 'PagesController@services');
-Route::get('/login', 'PagesController@login');
+Route::get('/login', 'AuthController@login');
 Route::post('/login','AuthController@authenticate');
 Route::get('/user_management', 'UserController@user_management');
 Route::get('/logout', 'AuthController@logout');

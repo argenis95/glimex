@@ -137,6 +137,7 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+		'App\Providers\UtilitiesServiceProvider',
 
 	],
 
@@ -187,6 +188,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Form'      => 'Illuminate\Html\FormFacade',
 		'Html'      => 'Illuminate\Html\FormFacade',
+		'Utilities' => 'App\Facades\Utilities',
 
 	],
 
