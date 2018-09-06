@@ -15,7 +15,7 @@ return [
 	|
 	*/
 
-	'driver' => env('MAIL_DRIVER', 'log'),
+	'driver' => env('MAIL_DRIVER', 'smtp'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ return [
 	|
 	*/
 
-	'host' => env('MAIL_HOST', ' smtp.mailtrap.io'),
+	'host' => env('MAIL_HOST', 'smtp.google.com'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return [
 	|
 	*/
 
-	'port' => env('MAIL_PORT', 2525),
+	'port' => env('MAIL_PORT', '587'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
 	|
 	*/
 
-	'username' => env('MAIL_USERNAME'),
+	'username' => env('MAIL_USERNAME', 'laravelsmtp@gmail.com'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return [
 	|
 	*/
 
-	'password' => env('MAIL_PASSWORD'),
+	'password' => env('MAIL_PASSWORD', '22351261'),
 
 	/*
 	|--------------------------------------------------------------------------

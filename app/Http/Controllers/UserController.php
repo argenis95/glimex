@@ -4,7 +4,7 @@
 use App\Http\Controllers\Controller;
 use App\User;
 use App\User_Type;
-use Auth, Request, Input, Hash;
+use Auth, Request, Input, Hash, Mail;
 
 
 class UserController extends Controller {
@@ -22,17 +22,19 @@ class UserController extends Controller {
 		return view('create_user')->with('types', $types);
 	}
 	public function register(){
-		$register=Request::all();
-		$password= Hash::make(str_random(8));
-		$user = new User;
 
+		$register=Request::all();
+		$password= str_random(8);
+		$hashedpass= Hash::make($password);
+		$user = new User;
 		$user->name = $register['name'];
 		$user->last_name= $register['last_name'];
 		$user->email = $register['email'];
-		$user->password = $password;
+		$user->password = $hashedpass;
 		$user->user_type_id = $register['user_type'];
 		$user->save();
 		return redirect('user_management');
+		
 	}
 	public function edit_form($id)
 	{

@@ -1,6 +1,6 @@
 <?php namespace App\Classes;
 
-use Auth, Request, Input;
+use Auth, Request, Input, Mail;
 use Illuminate\Routing\Controller;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
@@ -18,5 +18,14 @@ class Utilities{
                 case 4: return 'student';
             }
         }
+    }
+    public function send_email($user, $password){
+        
+        Mail::send('emails.welcome_mail', ['user' => $user,'password'=> $password], static function($message) use ($user, $password)
+		{
+            $message->from('example@example.com', 'Ejemplo');
+            $message->to($user['email'], $user['name'])->subject('Welcome!');
+            
+        });
     }
 }
