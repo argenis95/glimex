@@ -50,3 +50,16 @@ $(function(){
         });
     })
 });
+
+
+function check($user) {
+    var password1= document.change_pass.password.value;
+    var password2= document.change_pass.password_check.value;
+    
+    if (password1.value != password.value) {
+        input.setCustomValidity('Password Must be Matching.');
+    } else {
+        // input is valid -- reset the error message
+        input.setCustomValidity('');
+    }
+}

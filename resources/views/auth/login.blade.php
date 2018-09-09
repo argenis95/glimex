@@ -32,6 +32,9 @@
 				</div>
 			</div>	
 	</form>
+	<div>
+		<div class="card-body"><a href="/password_recovery">¿Olvidó su contraseña?</a></div>
+	</div>
 </div>	
 @else
 <div class="p-4 container">

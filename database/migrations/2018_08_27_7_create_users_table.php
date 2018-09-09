@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration {
 			$table->string('user_type_id')->foreing()
                   ->references('id')->on('user_types')
 				  ->onDelete('cascade');
+			$table->string('reset_code', 8);
 			$table->rememberToken();
 			$table->timestamps();
 			$table->softDeletes();

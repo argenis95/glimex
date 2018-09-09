@@ -93,13 +93,13 @@
             
                 <div style="Margin-left: 20px;Margin-right: 20px;">
         <div style="mso-line-height-rule: exactly;mso-text-raise: 4px;">
-            <h2 style="Margin-top: 0;Margin-bottom: 16px;font-style: normal;font-weight: normal;color: #e31212;font-size: 26px;line-height: 34px;font-family: Avenir,sans-serif;text-align: center;"><strong>Bienvenido a GLI de México, {{ $user['name'] }}.</strong></h2>
+            <h2 style="Margin-top: 0;Margin-bottom: 16px;font-style: normal;font-weight: normal;color: #e31212;font-size: 26px;line-height: 34px;font-family: Avenir,sans-serif;text-align: center;"><strong>Hola, {{ $user['name'] }}.</strong></h2>
         </div>
         </div>
             
                 <div style="Margin-left: 20px;Margin-right: 20px;">
         <div style="mso-line-height-rule: exactly;mso-text-raise: 4px;">
-            <p class="size-22" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 18px;line-height: 26px;" lang="x-size-22"><span class="font-avenir"><span style="color:#348cd9"><strong>Tu contraseña es {{ $password }}, puedes usarla para iniciar sesión en nuestra <a href="www.glimexico.com">página</a></strong></span></span></p>
+            <p class="size-22" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 18px;line-height: 26px;text-align: center;" lang="x-size-22"><span class="font-avenir"><span style="color:#348cd9"><strong>Tu código de recuperación es {{ $code }}.</strong></span></span></p>
         </div>
         </div>
             
@@ -151,8 +151,8 @@
                     <div style="font-size: 12px;line-height: 19px;">
                     
                     </div>
-                    <div style="font-size: 12px;line-height: 19px;Margin-top: 18px;">
-                    <div>Enviado automáticamente con el registro de su usuario en el servicio.</div>
+                    <div style="font-size: 12px;line-height: 19px;Margin-top: 18px;text-align: center">
+                    <div>Si usted no solicitó este código, por favor ignore este mensaje.</div>
                     </div>
                     <!--[if mso]>&nbsp;<![endif]-->
                 </div>

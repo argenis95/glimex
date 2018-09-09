@@ -28,7 +28,7 @@ return [
 	|
 	*/
 
-	'host' => env('MAIL_HOST', 'smtp.google.com'),
+	'host' => env('MAIL_HOST', 'smtp.mailtrap.io'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -41,8 +41,7 @@ return [
 	|
 	*/
 
-	'port' => env('MAIL_PORT', '587'),
-
+	'port' => env('MAIL_PORT'),
 	/*
 	|--------------------------------------------------------------------------
 	| Global "From" Address
@@ -54,7 +53,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => null, 'name' => null],
+	'from' => ['address' => 'laravelsmtp4@gmail.com', 'name' => 'Argenis'],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +79,7 @@ return [
 	|
 	*/
 
-	'username' => env('MAIL_USERNAME', 'laravelsmtp@gmail.com'),
+	'username' => env('MAIL_USERNAME', '4cd0a3cfb2cc57'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +92,7 @@ return [
 	|
 	*/
 
-	'password' => env('MAIL_PASSWORD', '22351261'),
+	'password' => env('MAIL_PASSWORD', '874ec5c0dd2285'),
 
 	/*
 	|--------------------------------------------------------------------------

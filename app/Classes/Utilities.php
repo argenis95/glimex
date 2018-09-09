@@ -19,13 +19,21 @@ class Utilities{
             }
         }
     }
-    public function send_email($user, $password){
+    public function send_register_email($user, $password){
         
         Mail::send('emails.welcome_mail', ['user' => $user,'password'=> $password], static function($message) use ($user, $password)
 		{
-            $message->from('example@example.com', 'Ejemplo');
+            $message->from('UserManagement@glimexico.com', 'GLI de México');
             $message->to($user['email'], $user['name'])->subject('Welcome!');
-            
         });
     }
+    public function send_recovery_email($user, $code){
+        
+        Mail::send('emails.recovery_mail', ['user' => $user, 'code'=> $code], static function($message) use ($user, $code)
+		{
+            $message->from('UserManagement@glimexico.com', 'GLI de México');
+            $message->to($user['email'], $user['name'])->subject('Solicitud de recuperación de contraseña');
+        });
+    }
+
 }
