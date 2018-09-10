@@ -29,10 +29,10 @@ Route::get('/logout', 'AuthController@logout');
 
 Route::group(['middleware' => ['logincheck']], function()
 {
-    Route::get('/password_recovery', 'UserController@ask_password_recovery');
-    Route::post('/password_recovery', 'UserController@password_recovery');
-    Route::get('/reset_password', 'UserController@reset_password');
-    Route::put('/password_recovery', 'UserController@password_change');
+    Route::get('/reset_password', 'UserController@ask_password_recovery');
+    Route::post('/reset_password', 'UserController@password_recovery');
+    Route::get('/reset_password/{id}', 'UserController@reset_password_form');
+    Route::post('/reset_password/{id}', 'UserController@password_change');
     Route::get('/login', 'AuthController@login');
     Route::post('/login','AuthController@authenticate');
 });

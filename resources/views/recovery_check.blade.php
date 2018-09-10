@@ -5,10 +5,9 @@
 @section('content')
 <div class="card text-dark bg-light mb-3 p-3 text-center">
     <div class="card-header bg-primary">
-        <p>Recuperar contraseña</p>
+        <p>Cambiar contraseña</p>
     </div>
-    <form  method="POST" action="/password_recovery" name="change_pass" name="change_pass">
-        <input type="hidden" name="_method" value="PUT">
+    <form  method="POST" action="/reset_password/{{$user['id']}}" name="change_pass" id="change_pass">
         <div class="card-body">
             <div class="row p-3">
                 <div class="col-md-6 ">
@@ -37,7 +36,7 @@
             <div>
                 <div class="card-body"></div>
             </div>  
-            <input type="hidden" class="form-control" name="user_id" value ="{{$user['id']}}" required/>
+            <!--<input type="hidden" class="form-control" name="user_id" value ="{{$user['id']}}" required/>-->
             <div class="row">
                 <div class="col-md-12">
                     <button type="submit" class="btn btn-primary btn-lg">Cambiar contraseña</button>

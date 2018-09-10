@@ -71,32 +71,36 @@ class UserController extends Controller {
 		$user = User::where ('email', '=', $email)->first();
 		if (!$user)
 		{
-			return redirect ('/home');
+			return redirect()->back()->with ('message', 'Usuario no encontrado');
 		}
 		$code=str_random(8);
 		$user->reset_code=$code;
 		$user->save();
+		$id=$user['id'];
 		Utilities::send_recovery_email($user, $code);
-		return view ('recovery_check')->with('user', $user);
+		$url= '/reset_password/';
+		return redirect( $url.=$id)->with('user', $user);
+	}
+	public function reset_password_form($id)
+	{
+		$user=User::find($id);
+		return view ('recovery_check')->with(['user'=>$user]);
 	}
 
-	public function password_change()
+	public function password_change($id)
 	{	
-		/*$input= Request::all();
-		$user= User::find($input['user_id']);
-		if($input['reset_code']==$user['reset_code'])
+		$code= Request::input('reset_code');
+		$password= Request::input('password');
+		$user= User::find($id);
+		if($code===$user['reset_code'])
 		{
-			if ($input['password']==$input['password_check'])
-			{
-				$user->password = $input['password'];  
-				$user->reset_code=null;
-				return redirect ('/login');
-			}
-			return view('recovery_check')->with('user', $user);
+			$user->password = Hash::make($password);  
+			$user->reset_code=null;
+			$user->save();
+			Utilities::send_password_email($user, $password);
+			return redirect ('/login')->with('message', 'Tu contraseña se cambió satisfactoriamente');
 		}
-		return view('recovery_check')->with('user', $user);*/
-
-
+		return redirect()->back()->with ('message', 'Código de verificación incorrecto');
 	}
 
 	

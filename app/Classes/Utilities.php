@@ -35,5 +35,13 @@ class Utilities{
             $message->to($user['email'], $user['name'])->subject('Solicitud de recuperación de contraseña');
         });
     }
+    public function send_password_email($user, $password){
+        
+        Mail::send('emails.send_password', ['user' => $user, 'password'=> $password], static function($message) use ($user, $password)
+		{
+            $message->from('UserManagement@glimexico.com', 'GLI de México');
+            $message->to($user['email'], $user['name'])->subject('Cambio de contraseña exitoso');
+        });
+    }
 
 }

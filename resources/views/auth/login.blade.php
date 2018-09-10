@@ -33,7 +33,7 @@
 			</div>	
 	</form>
 	<div>
-		<div class="card-body"><a href="/password_recovery">¿Olvidó su contraseña?</a></div>
+		<div class="card-body"><a href="/reset_password">¿Olvidó su contraseña?</a></div>
 	</div>
 </div>	
 @else

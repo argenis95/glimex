@@ -13,13 +13,13 @@
                                 <div class="header_top_nav">
                                     <ul class="d-flex flex-row align-items-center justify-content-start">
                                         <li>@if (Auth::check())
-                                            <a href="/logout">Hola, usuario</a>
+                                            Hola, usuario (<a href="/logout">Logout</a>)
                                             @else
                                             <a href="/login">Acceder</a>
                                             @endif
                                         </li>
                                         <li>
-                                            <a href="/registerdone">Menú 2</a>
+                                            <a href="#">Menú 2</a>
                                         </li>
                                         <li>
                                             <a href="#">Menú 1</a>

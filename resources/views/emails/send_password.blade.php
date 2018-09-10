@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <meta charset="UTF-8">
     <td>
         <div role="banner">
             <div class="preheader" style="Margin: 0 auto;max-width: 560px;min-width: 280px; width: 280px;width: calc(28000% - 167440px);">
@@ -99,7 +100,7 @@
             
                 <div style="Margin-left: 20px;Margin-right: 20px;">
         <div style="mso-line-height-rule: exactly;mso-text-raise: 4px;">
-        <p class="size-22" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 18px;line-height: 26px;text-align: center;" lang="x-size-22"><span class="font-avenir"><span style="color:#348cd9"><strong>Tu código de recuperación es {{ $code }}. Puede cambiar su contraseña en el siguiente <a href="www.glimexico.com/reset_password/{{ $user['id'] }}">enlace</a></strong></span></span></p>
+            <p class="size-22" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 18px;line-height: 26px;" lang="x-size-22"><span class="font-avenir"><span style="color:#348cd9"><strong>Tu contraseña ha cambiado exitosamente a {{ $password }}, puedes usarla para iniciar sesión en nuestra <a href="www.glimexico.com">página</a></strong></span></span></p>
         </div>
         </div>
             
@@ -151,8 +152,8 @@
                     <div style="font-size: 12px;line-height: 19px;">
                     
                     </div>
-                    <div style="font-size: 12px;line-height: 19px;Margin-top: 18px;text-align: center">
-                    <div>Si usted no solicitó este código, por favor ignore este mensaje.</div>
+                    <div style="font-size: 12px;line-height: 19px;Margin-top: 18px;">
+                    <div>Enviado automáticamente con el registro de su usuario en el servicio.</div>
                     </div>
                     <!--[if mso]>&nbsp;<![endif]-->
                 </div>

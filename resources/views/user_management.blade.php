@@ -6,12 +6,19 @@
 
 <div class="p-4">
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-8">
+        </div>
+        <div class="col-md-2">
+             <a href="/deleted_users" title="Usuarios eliminados">
+                <button class="btn-register btn btn-danger float-right">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                </button>
+            </a>
         </div>
         <div class="col-md-2 ">
             <a href="/create_user" title="Registrar nuevo usuario">
                 <button class="btn-register btn btn-primary float-right">
-                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    <i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-users p-1" aria-hidden="true"></i>
                 </button>
             </a>
         </div>

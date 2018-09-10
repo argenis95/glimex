@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <meta charset="UTF-8">
     <td>
         <div role="banner">
             <div class="preheader" style="Margin: 0 auto;max-width: 560px;min-width: 280px; width: 280px;width: calc(28000% - 167440px);">

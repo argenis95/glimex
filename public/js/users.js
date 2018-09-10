@@ -52,14 +52,15 @@ $(function(){
 });
 
 
-function check($user) {
-    var password1= document.change_pass.password.value;
-    var password2= document.change_pass.password_check.value;
-    
-    if (password1.value != password.value) {
-        input.setCustomValidity('Password Must be Matching.');
-    } else {
-        // input is valid -- reset the error message
-        input.setCustomValidity('');
-    }
-}
+$(function(){
+    $('#change_pass').submit(function(event){
+        var pass=$('#password').val();
+        var pass2=$('#password_check').val();
+        if (pass===pass2)
+        {
+            return true;
+        }
+        bootbox.alert("Las contraseñas no coinciden.");
+        return false;
+    })
+});

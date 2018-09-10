@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-use Auth, Request, Input;
+use Auth, Request, Input, Utilities;
 use Illuminate\Routing\Controller;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
@@ -19,7 +19,13 @@ class AuthController extends Controller {
         $password =Request::input('password');
         if (Auth::attempt(['email' => $email, 'password' => $password]))
         {
-            return redirect('/user_management');
+            switch (Utilities::get_user_type()){
+                case 'admin': return redirect('/user_management');
+                case 'manager': return redirect ('/group_management');
+                case 'instructor': return redirect ('/student_management');
+                case 'student': return redirect ('/account_management');
+            }
+          
         }
         else{
             return redirect('/login')->with('message', 'Login Failed');

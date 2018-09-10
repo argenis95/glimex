@@ -7,7 +7,7 @@
     <div class="card-header bg-primary">
         <p>Recuperar contraseña</p>
     </div>
-    <form  method="POST" action="/password_recovery">
+    <form  method="POST" action="/reset_password">
         <div class="card-body">
             <div class="row p-3">
                 <div class="col-md-6 ">
