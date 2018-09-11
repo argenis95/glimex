@@ -103,5 +103,26 @@ class UserController extends Controller {
 		return redirect()->back()->with ('message', 'Código de verificación incorrecto');
 	}
 
+	public function deleted()
+	{
+		return view('deleted_users');
+	}
+
+	public function deleted_data()
+	{
+		return User::onlyTrashed()->get();
+	}
+
+	public function restore($id)
+	{
+		$user= User::findOrFail($id);
+		$user->restore();	
+	}
+	public function force_delete($id)
+	{
+		$user= User::findOrFail($id);
+		$user->forceDelete();
+	}
+
 	
 }

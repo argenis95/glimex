@@ -50,7 +50,11 @@
                                         <ul class="d-flex flex-row align-items-center justify-content-start">
                                             @if (Utilities::get_user_type()=='admin')
                                             <li>
-                                                <a href="/user_management">Manejo de usuario</a>
+                                                <a href="/user_management">Manejo de usuarios</a>
+                                            </li>
+                                            @elseif (Utilities::get_user_type()=='manager')
+                                            <li>
+                                                <a href="/manager_dashboard">Dashboard</a>
                                             </li>
                                             @endif
                                             @if (!Auth::check())

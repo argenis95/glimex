@@ -21,25 +21,15 @@ class AuthController extends Controller {
         {
             switch (Utilities::get_user_type()){
                 case 'admin': return redirect('/user_management');
-                case 'manager': return redirect ('/group_management');
-                case 'instructor': return redirect ('/student_management');
-                case 'student': return redirect ('/account_management');
+                case 'manager': return redirect ('/manager_dashboard');
+                case 'instructor': return redirect ('/class_management');
+                case 'student': return redirect ('/student_management');
             }
           
         }
         else{
             return redirect('/login')->with('message', 'Login Failed');
-        }
-        /*$user = User::where('email', $email)->first();
-            if ($user != null && Hash::check($password, $user->password)){
-                Auth::login($user);
-                return redirect('/');
-                
-            }
-            else{
-                return redirect('user/login')->with('message', 'Login Failed');
-            }*/
-            
+        }   
     }
     public function login()
 	{

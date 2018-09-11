@@ -33,5 +33,6 @@
         <script type="text/javascript" src="/DataTables/datatables.min.js"></script>
         <script src="/js/custom.js"></script>
         <script src="/js/users.js"></script> 
+        <script src="/js/manager.js"></script>
     </body>
 </html>

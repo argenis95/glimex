@@ -18,7 +18,7 @@
         <div class="col-md-2 ">
             <a href="/create_user" title="Registrar nuevo usuario">
                 <button class="btn-register btn btn-primary float-right">
-                    <i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-users p-1" aria-hidden="true"></i>
+                    <i class="fa fa-user-plus" aria-hidden="true"></i>
                 </button>
             </a>
         </div>
