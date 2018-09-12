@@ -100,7 +100,7 @@
             
                 <div style="Margin-left: 20px;Margin-right: 20px;">
         <div style="mso-line-height-rule: exactly;mso-text-raise: 4px;">
-            <p class="size-22" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 18px;line-height: 26px;" lang="x-size-22"><span class="font-avenir"><span style="color:#348cd9"><strong>Tu contraseña ha cambiado exitosamente a {{ $password }}, puedes usarla para iniciar sesión en nuestra <a href="www.glimexico.com">página</a></strong></span></span></p>
+            <p class="size-22" style="Margin-top: 0;Margin-bottom: 20px;font-family: avenir,sans-serif;font-size: 18px;line-height: 26px;" lang="x-size-22"><span class="font-avenir"><span style="color:#348cd9"><strong>Tu contraseña ha cambiado exitosamente a {{ $password }}. Si no realizaste el cambio, por favor, ponte en contacto con algún administrador.</strong></span></span></p>
         </div>
         </div>
             

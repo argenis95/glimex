@@ -20,6 +20,11 @@
     <body>
         <div class='super-container'>
             @include('layouts.partials.header')
+            @if (Session::has('message'))
+            <div class="message-log text-success mt-3 text-center">
+                {{ Session::get('message')}}
+            </div>
+            @endif
             @yield('content')
         </div>
         @include('layouts.partials.footer')

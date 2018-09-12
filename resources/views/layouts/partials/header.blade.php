@@ -12,23 +12,24 @@
                             <div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
                                 <div class="header_top_nav">
                                     <ul class="d-flex flex-row align-items-center justify-content-start">
-                                        <li>@if (Auth::check())
-                                            Hola, usuario (<a href="/logout">Logout</a>)
-                                            @else
-                                            <a href="/login">Acceder</a>
-                                            @endif
+                                        @if (Auth::check())
+                                        <div class="dropdown">
+                                            <a href="#" class="dropbtn">Hola, {{Auth::user()['name']}}<i class="fa fa-caret-down p-1" aria-hidden="true"></i></a>
+                                            <div class="dropdown-content">
+                                                <a class="text-primary" href="/account_config"><i class="fa fa-cogs p-1" aria-hidden="true"></i>Editar cuenta</a>
+                                                <a class="text-primary" href="/logout"><i class="fa fa-sign-out p-1" aria-hidden="true"></i>Cerrar sesión</a>
+                                            </div>
+                                        </div>
+                                        <i class="fa fa-user-circle-o fa-3x pl-3 text-primary" aria-hidden="true"></i> 
+                                        @else
+                                        <li>
+                                            <a href="/login">Acceder <i class="fa fa-sign-in p-1" aria-hidden="true"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#">Menú 2</a>
+                                            <a href="/contact">Contacto <i class="fa fa-envelope-o p-1" aria-hidden="true"></i></a>
                                         </li>
-                                        <li>
-                                            <a href="#">Menú 1</a>
-                                        </li>
+                                        @endif   
                                     </ul>
-                                </div>
-                                <div class="header_top_phone">
-                                    <i class="fa fa-phone" aria-hidden="true"></i>
-                                    <span>+34 586 778 8892</span>
                                 </div>
                             </div>
                             <div class="hamburger ml-auto">

@@ -1,6 +1,8 @@
 <?php
 
 Route::get('/test', function(){
+    $user=Auth::user();
+    dd($user);
 });
 
 Route::group(['middleware' => ['admin']], function()
@@ -29,8 +31,18 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/home', 'PagesController@index');
 Route::get('/services', 'PagesController@services');
-Route::get('/logout', 'AuthController@logout');
+Route::get('/alegiances', 'PagesController@ale');
 
+Route::group(['middleware'=> ['authcheck']], function()
+{
+
+    Route::get('/logout', 'AuthController@logout');
+    Route::get('/account_config', 'UserController@edit_account');
+    Route::put('/account_config/{id}', 'UserController@edit_info');
+    Route::put('/change_password/{id}', 'UserController@edit_pass');
+
+});
+    
 Route::group(['middleware' => ['logincheck']], function()
 {
     Route::get('/reset_password', 'UserController@ask_password_recovery');

@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div>
-                <div class="card-body"></div>
+            <div class="card-body"></div>
             </div>  
             <!--<input type="hidden" class="form-control" name="user_id" value ="{{$user['id']}}" required/>-->
             <div class="row">

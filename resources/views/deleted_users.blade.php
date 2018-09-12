@@ -4,6 +4,20 @@
 
 @section('content')
 
+<div class="p-4">
+    <div class="row">
+        <div class="col-md-2">
+            <a href="/user_management" title="Regresar">
+                <button class="btn-register btn btn-primary float-right">
+                    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                </button>
+            </a>
+        </div>
+        <div class="col-md-10">
+        </div>
+    </div>
+</div>
+
 
 <div class="text-white mb-3 p-4">
     <div class="card-header bg-primary text-light text-center mb-3 p-3">
