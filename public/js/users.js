@@ -21,7 +21,7 @@ $(function(){
 
     $('#users').on('click', '.edit', function() {
         var id = $(this).attr('data-id');
-        $(location).attr('href', '/user_management/' + id);
+        $(location).attr('href', '/users/' + id);
     });
     $('#users').on('click', '.delete', function(){
         var id = $(this).attr('data-id');
@@ -40,9 +40,9 @@ $(function(){
                 if (result) {
                     $.ajax({
                         method: 'DELETE',
-                        url: '/user_management/'+ id,
+                        url: '/users/'+ id,
                         success: function(){
-                            $(location).attr('href', '/user_management');
+                            $(location).attr('href', '/users');
                         }
                     });
                 }

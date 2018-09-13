@@ -51,7 +51,10 @@
                                         <ul class="d-flex flex-row align-items-center justify-content-start">
                                             @if (Utilities::get_user_type()=='admin')
                                             <li>
-                                                <a href="/user_management">Manejo de usuarios</a>
+                                                <a href="/users">Usuarios</a>
+                                            </li>
+                                            <li>
+                                                <a href="/company">Empresas</a>
                                             </li>
                                             @elseif (Utilities::get_user_type()=='manager')
                                             <li>

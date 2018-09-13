@@ -7,7 +7,7 @@
 <div class="p-4">
     <div class="row">
         <div class="col-md-2">
-            <a href="/user_management" title="Regresar">
+            <a href="/users" title="Regresar">
                 <button class="btn-register btn btn-primary float-right">
                     <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
                 </button>

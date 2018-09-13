@@ -1,28 +1,35 @@
 <?php
+use App\User;
 
 Route::get('/test', function(){
-    $user=Auth::user();
-    dd($user);
+    $type='2';
+    $managers= User::where('user_type_id', '=', $type)->get();
+    dd($managers);
 });
 
 Route::group(['middleware' => ['admin']], function()
 {
-    Route::get('/user_management', 'UserController@user_management');
+    Route::get('/users', 'UserController@user_management');
     Route::get('/users_datatables', 'UserController@userdata');
     Route::get('/create_user', 'UserController@create_user');
-    Route::post('/user_management','UserController@register');
-    Route::get('/user_management/{id}', 'UserController@edit_form');
-    Route::put('/user_management/{id}', 'UserController@edit');
-    Route::delete('/user_management/{id}', 'UserController@delete');
+    Route::post('/users','UserController@register');
+    Route::get('/users/{id}', 'UserController@edit_form');
+    Route::put('/users/{id}', 'UserController@edit');
+    Route::delete('/users/{id}', 'UserController@delete');
     Route::get('/deleted_users', 'UserController@deleted');
     Route::get('/deleted', 'UserController@deleted_data');
     Route::post('/deleted_users/{id}', 'UserController@restore');
     Route::delete('/deleted_users/{id}', 'UserController@force_delete');
+
+    Route::get('/companies_datatables', 'GroupController@company_data');
+    Route::get('/company', 'GroupController@company_management');
+    Route::get('/company/add', 'GroupController@add_company');
 });
 
 Route::group(['middleware' => ['manager']], function()
 {
     Route::get('/manager_dashboard', 'GroupController@dashboard');
+   
 
 });
 
@@ -31,7 +38,7 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/home', 'PagesController@index');
 Route::get('/services', 'PagesController@services');
-Route::get('/alegiances', 'PagesController@ale');
+Route::get('/allegiances', 'PagesController@alle');
 
 Route::group(['middleware'=> ['authcheck']], function()
 {

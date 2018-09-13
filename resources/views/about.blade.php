@@ -58,7 +58,7 @@
                 <div class="about_content">
                     <div class="about_title">Alianzas estratégicas</div>
                     <div class="about_text">Pensando en sus necesidades, hemos formado alianzas con varias compañías con el fin de darles un servicio adicional. Por medio de estas alianzas, todos nuestros alumnos podrán beneficiarse de importantes descuentos al momento de adquirir algún servicio o producto de estas compañías.</div>
-                    <div class="button home_button"><a href="/services"><span>Saber más</span><span>Saber más</span></a></div>
+                    <div class="button home_button"><a href="/allegiances"><span>Saber más</span><span>Saber más</span></a></div>
                 </div>
             </div>
         </div>

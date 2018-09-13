@@ -20,6 +20,8 @@ class PagesController extends Controller {
 		return view('services');
 	}
 
-	
+	public function alle(){
+		return view('allegiances');
+	}
 
 }

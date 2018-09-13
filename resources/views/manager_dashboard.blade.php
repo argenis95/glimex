@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Manejo de usuarios')
+@section('title', 'Manager dashboard')
 
 @section('content')
 
@@ -13,21 +13,21 @@
         </div>
     </div>
     <div class="row">
-        <div class="card-body bg-white col-md-4">
-            <a href="/company_management" title="Empresas">
-                <button class="btn-register btn btn-primary float-right" id="company">
+        <div class="show-hover card-body bg-white col-md-4">
+            <a href="/company_management" title="Empresas" id="company">
+                <button class="btn-register btn btn-primary float-right">
                     <i class="fa fa-building p-1" aria-hidden="true"></i>
                 </button>
             </a>
         </div>
-        <div class="card-body bg-white col-md-4">
+        <div class="show-hover card-body bg-white col-md-4">
             <a href="/groups_management" title="Grupos" id="group">
                 <button class="btn-register btn btn-primary float-right">
                     <i class="fa fa-users p-1" aria-hidden="true"></i>
                 </button>
             </a>
         </div>
-        <div class="card-body bg-white col-md-4">
+        <div class="show-hover card-body bg-white col-md-4">
             <a href="/group_students_list" title="Estudiantes" id="student">
                 <button class="btn-register btn btn-primary float-right">
                     <i class="fa fa-user p-1" aria-hidden="true"></i>
@@ -37,7 +37,12 @@
     </div>
     <div class="row card-body bg-white">
         <div class="col-md-12">
-            <div class="show-info group-info" style="display: none;">Lorem ipsumasdasdasdasdasdassads</div>
+            <div class="show-info group-info text-dark text-center">Panel de manejo de grupos</div>
+            <div class="show-info group-info text-dark text-center">Crea y edita los grupos de estudio</div>
+            <div class="show-info company-info text-dark text-center" >Panel de manejo de empresas</div>
+            <div class="show-info company-info text-dark text-center" >Crea y edita las empresas clientes</div>
+            <div class="show-info student-info text-dark text-center" >Panel de manejo de estudiantes</div>
+            <div class="show-info student-info text-dark text-center" >Visualiza, mueve o elimina estudiantes de los grupos</div>
         </div>
     </div>
 </div>

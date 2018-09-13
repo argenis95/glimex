@@ -8,7 +8,7 @@
     <div class="card-header bg-primary">
         <p>Editar Usuario</p>
     </div>
-    <form  method="POST" action="/user_management/{id}">
+    <form  method="POST" action="/users/{id}">
         <input type="hidden" name="_method" value="PUT">
         <div class="card-body">
             <div class="row p-3">

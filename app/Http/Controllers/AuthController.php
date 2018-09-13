@@ -20,7 +20,7 @@ class AuthController extends Controller {
         if (Auth::attempt(['email' => $email, 'password' => $password]))
         {
             switch (Utilities::get_user_type()){
-                case 'admin': return redirect('/user_management');
+                case 'admin': return redirect('/users');
                 case 'manager': return redirect ('/manager_dashboard');
                 case 'instructor': return redirect ('/class_management');
                 case 'student': return redirect ('/student_management');

@@ -44,7 +44,7 @@ class UserController extends Controller {
 			$user->user_type_id = $register['user_type'];
 			$user->save();
 			Utilities::send_register_email($user, $password);
-			return redirect('user_management')->with('message', 'Usuario creado con éxito');
+			return redirect('/users')->with('message', 'Usuario creado con éxito');
 		}
 		catch(Exception $e)
 		{
@@ -76,7 +76,7 @@ class UserController extends Controller {
 			$user->last_name = $input['last_name'];
 			$user->user_type_id = $input['user_type'];
 			$user->save();
-			return redirect('/user_management')->with('message', 'Usuario editado con éxito');
+			return redirect('/users')->with('message', 'Usuario editado con éxito');
 		}
 		catch(Exception $e)
 		{
