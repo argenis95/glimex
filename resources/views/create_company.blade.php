@@ -8,7 +8,7 @@
     <div class="card-header bg-primary">
         <p>Registro de empresas</p>
     </div>
-    <form  method="POST" action="/company">
+    <form  method="POST" action="/company" id="add_company">
         <div class="card-body">
             <div class="row p-3">
                 <div class="col-md-6 ">
@@ -22,12 +22,18 @@
                 <div class="col-md-6">
                     Asignar representantes
                 </div>
-                <div class="col-md-6">
-                    <select multiple class="form-control" name="manager_list">
+                <div class="col-md-3">
+                    <select multiple class="form-control" name="manager_list" id="select1">
                         @foreach ($managers as $manager)
-                            <option value="{{ $manager->id }}">{{ $manager->name }}</option>
+                            <option value="{{ $manager->id }}">{{ $manager->name }} {{ $manager->last_name }}</option>
                         @endforeach
                     </select>
+                    <button class="btn btn-primary btn-md m-1" id="add">Agregar<i class="fa fa-caret-right p-1" aria-hidden="true"></i></button>
+                </div>
+                <div class="col-md-3">
+                    <select multiple class="form-control" name="manager_list_selected[]" id="select2" required>
+                    </select>
+                    <button class="btn btn-primary btn-md m-1" id="remove"><i class="fa fa-caret-left p-1" aria-hidden="true"></i>Quitar</button>
                 </div>
             </div>
             <div class="row">

@@ -24,6 +24,8 @@ Route::group(['middleware' => ['admin']], function()
     Route::get('/companies_datatables', 'GroupController@company_data');
     Route::get('/company', 'GroupController@company_management');
     Route::get('/company/add', 'GroupController@add_company');
+    Route::post('/company', 'GroupController@add_new_company');
+    Route::get('/company/{id}', 'GroupController@edit_company');
 });
 
 Route::group(['middleware' => ['manager']], function()

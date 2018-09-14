@@ -18,10 +18,11 @@ class CreateCompaniesManagersTable extends Migration {
 			$table->integer('company_id')->foreign()
                   ->references('id')->on('companies')
 				  ->onDelete('cascade');
-			$table->string('manager_id')->foreing()
+			$table->integer('manager_id')->foreing()
                   ->references('id')->on('users')
 				  ->onDelete('cascade');
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 

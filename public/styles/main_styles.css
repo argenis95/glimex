@@ -269,6 +269,9 @@ section
 {
 	display: none;
 }
+select {
+    overflow-y: auto;
+}
 .nopadding
 {
 	padding: 0px !important;
