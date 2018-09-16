@@ -34,6 +34,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	use SoftDeletes;
 
-    protected $dates = ['deleted_at'];
+	protected $dates = ['deleted_at'];
+	
+	public function companies()
+    {
+        return $this->belongsToMany('App\Company', 'companies_managers', 'manager_id', 'company_id');
+    }
 
 }

@@ -1,10 +1,10 @@
 <?php
 use App\User;
+use App\Company;
 
 Route::get('/test', function(){
-    $type='2';
-    $managers= User::where('user_type_id', '=', $type)->get();
-    dd($managers);
+    $companies=Company::find(10)->managers;
+    return $companies;
 });
 
 Route::group(['middleware' => ['admin']], function()
@@ -26,6 +26,8 @@ Route::group(['middleware' => ['admin']], function()
     Route::get('/company/add', 'GroupController@add_company');
     Route::post('/company', 'GroupController@add_new_company');
     Route::get('/company/{id}', 'GroupController@edit_company');
+    Route::put('company/{id}', 'GroupController@edit');
+    Route::delete('company/{id}', 'GroupController@delete_company');
 });
 
 Route::group(['middleware' => ['manager']], function()

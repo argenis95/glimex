@@ -39,11 +39,11 @@ $(function(){
             }
         ],
     });
-    $('#users').on('click', '.edit', function() {
+    $('#companies').on('click', '.edit', function() {
         var id = $(this).attr('data-id');
         $(location).attr('href', '/company/' + id);
     });
-    $('#users').on('click', '.delete', function(){
+    $('#companies').on('click', '.delete', function(){
         var id = $(this).attr('data-id');
         bootbox.confirm({
             title: "Eliminar compañía",
@@ -85,6 +85,30 @@ $(function(){
     $('#add_company').submit(function(){
         $('option').prop("selected", "selected");
     });
+    $('#add_company').submit(function(){
+        var sel=$('#select2').val();
+        if (sel.length=== 0)
+        {
+            bootbox.alert("Seleccione un representante");
+            return false;
+        }
+
+        return true;
+    })
+    $('#edit_company').submit(function(){
+        $('#option').prop("selected", "selected");
+    });
+    $('#edit_company').submit(function(){
+        var sel=$('#select2').val();
+        if (sel.length=== 0)
+        {
+            bootbox.alert("Seleccione un representante");
+            return false;
+        }
+
+        return true;
+    })
+   
 });  
 
    

@@ -87,6 +87,11 @@ class UserController extends Controller {
 	{
 		$user= User::findOrFail($id);
 		$user->delete();
+		if ($user->user_type_id==='2')
+		{
+			$relations= Company_Manager::where('manager_id', '=', $id);
+			$relations->delete();
+		}
 		
 	}
 
