@@ -12,7 +12,7 @@ class AuthCheck {
 				return $next($request);
 			}
 		
-			return redirect('/home')->with('message', 'Acceso no autorizado');
+			return redirect('/home')->with('error', 'Acceso no autorizado');
 		}
 	}
 

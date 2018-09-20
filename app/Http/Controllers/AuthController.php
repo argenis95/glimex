@@ -21,14 +21,14 @@ class AuthController extends Controller {
         {
             switch (Utilities::get_user_type()){
                 case 'admin': return redirect('/users');
-                case 'manager': return redirect ('/manager_dashboard');
-                case 'instructor': return redirect ('/class_management');
+                case 'manager': return redirect ('/groups');
+                case 'instructor': return redirect ('/scores');
                 case 'student': return redirect ('/student_management');
             }
           
         }
         else{
-            return redirect('/login')->with('message', 'Login Failed');
+            return redirect()->back()->with('Error', 'Error al iniciar sesión. Compruebe sus datos');
         }   
     }
     public function login()

@@ -39,6 +39,20 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	public function companies()
     {
         return $this->belongsToMany('App\Company', 'companies_managers', 'manager_id', 'company_id');
-    }
+	}
+	public function signed()
+    {
+        return $this->belongsToMany('App\Course', 'courses_users', 'student_id', 'course_id');
+	}
+	
+	public function courses()
+	{
+		return $this->hasMany('App\Course', 'instructor_id', 'id');
+	}
+
+	public function scores()
+	{
+		return $this->hasMany('App\Score', 'student_id', 'id');
+	}
 
 }

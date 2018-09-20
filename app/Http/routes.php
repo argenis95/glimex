@@ -1,17 +1,20 @@
 <?php
 use App\User;
 use App\Company;
+use App\Course;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/test', function(){
-    $companies=Company::find(10)->managers;
-    return $companies;
+    $student= User::find(12);
+    $courses= $student->scores;
+    return $courses;
 });
 
 Route::group(['middleware' => ['admin']], function()
 {
     Route::get('/users', 'UserController@user_management');
     Route::get('/users_datatables', 'UserController@userdata');
-    Route::get('/create_user', 'UserController@create_user');
+    Route::get('/users/create', 'UserController@create_user');
     Route::post('/users','UserController@register');
     Route::get('/users/{id}', 'UserController@edit_form');
     Route::put('/users/{id}', 'UserController@edit');
@@ -26,16 +29,29 @@ Route::group(['middleware' => ['admin']], function()
     Route::get('/company/add', 'GroupController@add_company');
     Route::post('/company', 'GroupController@add_new_company');
     Route::get('/company/{id}', 'GroupController@edit_company');
-    Route::put('company/{id}', 'GroupController@edit');
-    Route::delete('company/{id}', 'GroupController@delete_company');
+    Route::put('/company/{id}', 'GroupController@edit');
+    Route::delete('/company/{id}', 'GroupController@delete_company');
 });
 
 Route::group(['middleware' => ['manager']], function()
 {
-    Route::get('/manager_dashboard', 'GroupController@dashboard');
-   
-
+    Route::get('/groups', 'GroupController@group_management');
+    Route::get('/groups_datatables', 'GroupController@groupdata');
+    Route::get('/groups/edit/{id}', 'GroupController@edit_group');
+    Route::put('/groups/{id}', 'GroupController@edit2');
+    Route::delete('/groups/{id}', 'GroupController@delete_group');
+    Route::get('/groups/add', 'GroupController@create_group');
+    Route::post ('/groups', 'GroupController@register_group');
 });
+
+Route::group(['middleware' => ['instructor']], function()
+{
+    Route::get('/scores', 'NotesController@dashboard');
+    Route::get('/scores/student/{id}', 'NotesController@notes_manage');
+    Route::get('/scores_data/{id}', 'NotesController@notesdata');
+    Route::get('/scores_data/notes/{id}', 'NotesController@notes');
+});
+
 
 
 Route::get('/', 'PagesController@index');

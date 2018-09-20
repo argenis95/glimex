@@ -1,25 +1,3 @@
-$(document).ready(function(){
-    $("#group").on('mouseover', function(){
-        $(".group-info").show();
-    });
-    $("#group").on('mouseout', function(){
-        $(".group-info").hide();
-    });
-    $("#company").on('mouseover', function(){
-        $(".company-info").show();
-    });
-    $("#company").on('mouseout', function(){
-        $(".company-info").hide();
-    });
-    $("#student").on('mouseover', function(){
-        $(".student-info").show();
-    });
-    $("#student").on('mouseout', function(){
-        $(".student-info").hide();
-    });
-});
-
-
 $(function(){
     $('#companies').DataTable({
         ajax: {

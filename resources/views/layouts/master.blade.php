@@ -43,6 +43,8 @@
         <script type="text/javascript" src="/DataTables/datatables.min.js"></script>
         <script src="/js/custom.js"></script>
         <script src="/js/users.js"></script> 
-        <script src="/js/manager.js"></script>
+        <script src="/js/companies.js"></script>
+        <script src="/js/groups.js"></script>
+        <script src="/js/notes.js"></script>
     </body>
 </html>

@@ -58,7 +58,7 @@
                                             </li>
                                             @elseif (Utilities::get_user_type()=='manager')
                                             <li>
-                                                <a href="/manager_dashboard">Dashboard</a>
+                                                <a href="/groups">Grupos</a>
                                             </li>
                                             @endif
                                             @if (!Auth::check())

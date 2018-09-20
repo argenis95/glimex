@@ -16,6 +16,10 @@ class Company extends Model {
     {
         return $this->belongsToMany('App\User', 'companies_managers', 'company_id', 'manager_id');
     }
+    public function courses()
+    {
+        return $this->hasMany('App\Course', 'company_id', 'id');
+    }
 
 }
 
