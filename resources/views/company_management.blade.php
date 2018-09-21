@@ -3,11 +3,11 @@
 @section('title', 'Manejo de Empresas')
 
 @section('content')
-<div class="p-4">
+<div class="dashboard p-4">
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-10 col-sm-10">
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 col-sm-2">
                 <a href="/company/add" title="Añadir empresa">
                 <button class="btn-register btn btn-primary float-right">
                     <i class="fa fa-building pr-1" aria-hidden="true"></i>

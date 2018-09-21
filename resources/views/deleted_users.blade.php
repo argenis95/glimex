@@ -4,16 +4,16 @@
 
 @section('content')
 
-<div class="p-4">
+<div class="dashboard p-4">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-2 col-sm-2">
             <a href="/users" title="Regresar">
                 <button class="btn-register btn btn-primary float-right">
                     <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
                 </button>
             </a>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-10 col-sm-2">
         </div>
     </div>
 </div>

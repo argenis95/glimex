@@ -53,78 +53,59 @@
     </div>
     <div class="card-body bg-white text-dark">
         <div class="row">       
-            <div class="text-center col-md-12 text-primary">
-                @foreach ($scores as $score)
-                    @if ($score->month_lock > '0')
+            <div class="col-md-12 text-primary">
+                <table id="notes-table" class="table">
+                    <thead class="text-dark">
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Estado</th>
+                            <th>Ver</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>   
+</div>
+<div class="modal fade" id="modal-list-notes" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-header bg-primary text-light text-center mb-3 p-3">
                     <div class="row">
-                        <div class="col-md-3">
-                        </div>
-                        <div class="col-md-6">
-                            Boletín {{ $score->created_at }} <i class="fa fa-lock pl-1" aria-hidden="true"></i>
-                            <button id="view" class="btn btn-primary m-1 view-score" data-id="{{$score->id}}"><i class="fa fa-eye" aria-hidden="true"></i></button>
-                        </div>
-                        <div class="col-md-3">
+                        <div class="col-md-12">
+                            <h5 class="font-weight-bold">Calificaciones</h5>
                         </div>
                     </div>
-                    @else 
-                    <div class="row">
-                        <div class="col-md-3">
-                        </div>
-                        <div class="col-md-6">
-                            Boletín {{ $score->created_at }} <i class="fa fa-unlock-alt pl-1" aria-hidden="true"></i>
-                            <button id="view" class="btn btn-primary m-1 view-score" data-id="{{$score->id}}"><i class="fa fa-eye" aria-hidden="true"></i></button>
-                        </div>
-                        <div class="col-md-3">
-                        </div>
-                    </div>    
-                    @endif
-                @endforeach
+                </div>
+                <table id="students" class="table text-dark">
+                    <thead>
+                        <tr>
+                            <th>Evaluado</th>
+                            <th>Nota</th>
+                        </tr>
+                    </thead>
+                    <tbody id="notes-show">
+                    </tbody>
+                </table>
+                <div class="text-dark text-center font-weight-bold">
+                    Comentarios
+                </div>
+                <div class="text-dark text-center" id="comments">
+                </div>
+            </div>
+            <div class="modal-footer">
+                
             </div>
         </div>
     </div>
-
-
-    <div class="modal fade" id="note_list" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="card-header bg-primary text-light text-center mb-3 p-3">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h5 class="font-weight-bold">Calificaciones</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <table id="students" class="table text-dark">
-                        <thead>
-                            <tr>
-                                <th>Evaluado</th>
-                                <th>Nota</th>
-                            </tr>
-                        </thead>
-                        <tbody id="notes-show">
-                        </tbody>
-                    </table>
-                    <div class="text-dark text-center font-weight-bold">
-                        Comentarios
-                    </div>
-                    <div class="text-dark text-center" id="comments">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <a href="/scores/edit/"><button type="button" class="btn btn-primary text-right">Editar</button></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-   
-    
 </div>
 
 @endsection

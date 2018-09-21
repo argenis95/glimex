@@ -16,6 +16,7 @@
         <link rel="stylesheet" type="text/css" href="/styles/footer_styles.css">
         <link rel="stylesheet" type="text/css" href="/styles/responsive.css">
         <link rel="stylesheet" type="text/css" href="/DataTables/datatables.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/DataTables/Responsive-2.2.2/css/responsive.dataTables.min.css"/>
     </head>
     <body>
         <div class='super-container'>
@@ -32,6 +33,7 @@
             @endif
             @yield('content')
         </div>
+        @include('layouts.partials.modal-menu')
         @include('layouts.partials.footer')
         <script src="/js/Jquery-3.3.1/jquery-3.3.1.min.js"></script>
         <script src="/styles/bootstrap4/popper.js"></script>
@@ -41,6 +43,8 @@
         <script src="/js/bootbox/bootbox.min.js"></script>
         <script src="/plugins/parallax-js-master/parallax.min.js"></script>
         <script type="text/javascript" src="/DataTables/datatables.min.js"></script>
+        <script type="text/javascript" src="/DataTables/Responsive-2.2.2/js/dataTables.responsive.min.js"></script>
+        <script src="/js/responsive-menu.js"></script>
         <script src="/js/custom.js"></script>
         <script src="/js/users.js"></script> 
         <script src="/js/companies.js"></script>

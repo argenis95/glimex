@@ -1,5 +1,10 @@
 $(function(){
     $('#users').DataTable({
+        responsive: true,
+        columnDefs: [
+            { responsivePriority: 1, targets: 0 },
+            { responsivePriority: 2, targets: -1 }
+        ],
         ajax: {
             url: "/users_datatables",
             dataSrc: '',
@@ -67,6 +72,11 @@ $(function(){
 /*********************************usuarios eliminados */
 $(function(){
     $('#deleted_users').DataTable({
+        responsive: true,
+        columnDefs: [
+            { responsivePriority: 1, targets: 0 },
+            { responsivePriority: 2, targets: -1 }
+        ],
         ajax: {
             url: "/deleted",
             dataSrc: '',
@@ -139,3 +149,16 @@ $(function(){
         });
     })
 });
+
+$(function(){
+    $("#personal-btn").click(function(){
+        $("#personal").show();
+        $("#password").hide();
+    })
+    $("#password-btn").click(function(){
+        $("#password").show();
+        $("#personal").hide();
+    })
+
+});
+

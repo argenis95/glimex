@@ -321,3 +321,18 @@ color: #838383;
 	background-color: #ffffff;
 	border-radius: 5px;
 } 
+
+.menu-modal
+{
+	padding: 1rem;
+	box-shadow: 0 0 2px #329fec;
+	
+
+}
+
+.menu-modal:hover
+{
+	box-shadow: 0 0 5px #329fec;
+	background-color: #9cbfec ;
+	color: #007bff !important;
+}

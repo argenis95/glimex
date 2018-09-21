@@ -25,7 +25,7 @@ class NotesController extends Controller {
 		$student= User::find($id);
 		$courses= $student->signed;
 		$scores= $student->scores;
-		return view ('view_student')->with(['student'=>$student, 'courses'=>$courses, 'scores'=>$scores, 'modal'=>'true']);
+		return view ('view_student')->with(['student'=>$student, 'courses'=>$courses, 'scores'=>$scores]);
 	}
 
 	public function notesdata($id)
@@ -39,5 +39,12 @@ class NotesController extends Controller {
 	{
 		$score=Score::findOrFail($id);
 		return $score;
+	}
+
+	public function reportdata($id)
+	{
+		$user=User::findOrFail($id);
+		$reports=$user->scores;
+		return $reports;
 	}
 }

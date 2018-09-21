@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             <div class="hamburger ml-auto">
-                                <i class="fa fa-bars" aria-hidden="true"></i>
+                                <i class="fa fa-bars" id="responsive-menu" aria-hidden="true"></i>
                             </div>
                         </div>
                     </div>
@@ -59,6 +59,10 @@
                                             @elseif (Utilities::get_user_type()=='manager')
                                             <li>
                                                 <a href="/groups">Grupos</a>
+                                            </li>
+                                            @elseif (Utilities::get_user_type()=='instructor')
+                                            <li>
+                                                <a href="/scores">Mis grupos</a>
                                             </li>
                                             @endif
                                             @if (!Auth::check())
