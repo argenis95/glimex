@@ -5,8 +5,8 @@ use App\Course;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/test', function(){
-    $student= User::find(12);
-    $courses= $student->scores;
+    $student= User::find(7);
+    $courses= $student->signed;
     return $courses;
 });
 
@@ -31,6 +31,9 @@ Route::group(['middleware' => ['admin']], function()
     Route::get('/company/{id}', 'GroupController@edit_company');
     Route::put('/company/{id}', 'GroupController@edit');
     Route::delete('/company/{id}', 'GroupController@delete_company');
+    Route::get('/reports', 'NotesController@reports');
+    Route::get('/get_reports', 'NotesController@all_reports');
+    Route::post('/scores/unlock/{id}', 'NotesController@unlock');
 });
 
 Route::group(['middleware' => ['manager']], function()
@@ -51,10 +54,18 @@ Route::group(['middleware' => ['instructor']], function()
     Route::get('/scores_data/{id}', 'NotesController@notesdata');
     Route::get('/scores_data/notes/{id}', 'NotesController@notes');
     Route::get('/report_data/{id}', 'NotesController@reportdata');
+    Route::get('/scores/edit/{id}', 'NotesController@edit_scores');
+    Route::put('/scores/{id}', 'NotesController@edit');
+    Route::post('scores/student/{id}', 'NotesController@post');
+    Route::get('/scores/create/{id}', 'NotesController@create');
+});
+
+Route::group(['middleware' => ['student']], function(){
+    Route::get('/student_card', 'PagesController@student_card');
 });
 
 
-
+Route::get('/contact', 'PagesController@contact');
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/home', 'PagesController@index');

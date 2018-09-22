@@ -56,6 +56,10 @@
                                             <li>
                                                 <a href="/company">Empresas</a>
                                             </li>
+                                            <li>
+                                                <a href="/reports">Calificaciones</a>
+                                            </li>
+                                            </li>
                                             @elseif (Utilities::get_user_type()=='manager')
                                             <li>
                                                 <a href="/groups">Grupos</a>
@@ -63,6 +67,10 @@
                                             @elseif (Utilities::get_user_type()=='instructor')
                                             <li>
                                                 <a href="/scores">Mis grupos</a>
+                                            </li>
+                                            @elseif (Utilities::get_user_type()=='student')
+                                            <li>
+                                                <a href="/student_card/{{ Auth::user()['id']}}">Mis notas</a>
                                             </li>
                                             @endif
                                             @if (!Auth::check())

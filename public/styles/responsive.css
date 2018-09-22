@@ -113,6 +113,18 @@
 
 @media only screen and (max-width: 991px)
 {
+	.background-image{
+		margin-top: 3rem !important;
+	}
+
+	.about_title {
+		font-size: 30px;
+		margin-top: 3rem;
+		text-align: center !important;
+	}
+	.about_text {
+		text-align: center !important;
+	}
 	.home_title
 	{
 		font-size: 48px;
@@ -175,6 +187,20 @@
 	{
 		margin-bottom: 7px;
 	}
+	.footer_bar {
+		height:70% !important;
+		
+	}
+	.dashboard {
+		padding-top: 150px !important;
+	}
+
+	.personal{
+		width: 100% !important;
+	}
+	.password{
+		width: 100% !important;
+	}
 }
 
 /************
@@ -222,7 +248,9 @@
 
 @media only screen and (max-width: 575px)
 {
-
+	.background-image{
+		margin-top: 3rem !important;
+	}
 
 	.about_title {
 		font-size: 30px;

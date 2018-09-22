@@ -16,14 +16,14 @@ class AuthController extends Controller {
     public function authenticate()
     {
         $email = Request::input('email');
-        $password =Request::input('password');
+        $password=Request::input('password');
         if (Auth::attempt(['email' => $email, 'password' => $password]))
         {
             switch (Utilities::get_user_type()){
                 case 'admin': return redirect('/users');
                 case 'manager': return redirect ('/groups');
                 case 'instructor': return redirect ('/scores');
-                case 'student': return redirect ('/student_management');
+                case 'student': return redirect ('/student_card');
             }
           
         }

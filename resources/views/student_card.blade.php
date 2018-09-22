@@ -19,7 +19,7 @@
                 <p class="text-dark">Nombre:</p>
             </div>
             <div class="col-md-4">
-                <p class="text-primary">{{ $student['name']}} {{$student['last_name']}}</p>
+                <p class="text-primary">{{ $user['name']}} {{ $user['last_name'] }}</p>
             </div>
             <div class="col-md-2">
             </div>
@@ -31,7 +31,7 @@
                 <p class="text-dark">Grupos:</p>
             </div>
             <div class="col-md-4">
-                @foreach ($courses as $course)
+                @foreach ( $courses as $course)
                 <p class="text-primary">
                     {{ $course->name }} {{ $course->companies}}
                 </p>
@@ -52,7 +52,7 @@
     <div class="card-body bg-white text-dark">
         <div class="row">       
             <div class="col-md-12 text-primary">
-                <table id="notes-table" class="table">
+                <table id="student-table" class="table">
                     <thead class="text-dark">
                         <tr>
                             <th>Fecha</th>
@@ -66,21 +66,6 @@
             </div>
         </div>
     </div>   
-</div>
-<div class="dashboard p-4">
-    <div class="row">
-        <div class="col-md-8 col-sm-8">
-        </div>
-        <div class="col-md-2 col-sm-2">
-        </div>
-        <div class="col-md-2 col-sm-2">
-            <a href="/scores/create/{{ $student->id }}" title="Crear nuevo boletín">
-                <button class="btn-register btn btn-primary">
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                </button>
-            </a>
-        </div>
-    </div>
 </div>
 <div class="modal fade" id="modal-list-notes" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -98,7 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <table id="students" class="table text-dark">
+                <table id="notes-report" class="table text-dark">
                     <thead>
                         <tr>
                             <th>Evaluado</th>
@@ -121,5 +106,3 @@
 </div>
 
 @endsection
-
-

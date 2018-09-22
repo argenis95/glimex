@@ -20,6 +20,11 @@
                             <a class="text-primary link-modal" href="/company">Empresas</a>
                         </div>
                     </div> 
+                    <div class="row">
+                        <div class="col-sm-12 menu-modal">
+                            <a class="text-primary link-modal" href="/reports">Calificaciones</a>
+                        </div>
+                    </div> 
                     @elseif (Utilities::get_user_type()=='manager')
                     <div class="row">
                         <div class="col-sm-12 menu-modal">
@@ -30,6 +35,12 @@
                     <div class="row">
                         <div class="col-sm-12 menu-modal">
                             <a class="text-primary link-modal" href="/scores">Mis grupos</a>
+                        </div>
+                    </div>
+                    @elseif (Utilities::get_user_type()=='student')
+                    <div class="row">
+                        <div class="col-sm-12 menu-modal">
+                        <a class="text-primary link-modal" href="/student_card/{{ Auth::user()['id']}}">Mis notas</a>
                         </div>
                     </div>
                     @endif

@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\Factory;
 use App\User;
+use Auth;
 
 use Illuminate\Http\Request;
 
@@ -24,4 +25,10 @@ class PagesController extends Controller {
 		return view('allegiances');
 	}
 
+	public function student_card(){
+		$id= Auth::user()['id'];
+		$user= User::findOrFail($id);
+		$courses= $user->signed;
+		return view ('student_card')->with(['user'=>$user, 'courses'=>$courses]);
+	}
 }

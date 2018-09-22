@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="home_container">
-		<div class="background_image mt-3" style="background-image:url(/images/empresas.jpg)"></div>
+		<div class="background_image" style="background-image:url(/images/empresas.jpg)"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
