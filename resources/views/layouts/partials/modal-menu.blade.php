@@ -40,7 +40,7 @@
                     @elseif (Utilities::get_user_type()=='student')
                     <div class="row">
                         <div class="col-sm-12 menu-modal">
-                        <a class="text-primary link-modal" href="/student_card/{{ Auth::user()['id']}}">Mis notas</a>
+                        <a class="text-primary link-modal" href="/student_card">Mis notas</a>
                         </div>
                     </div>
                     @endif

@@ -52,15 +52,20 @@
     <div class="card-body bg-white text-dark">
         <div class="row">       
             <div class="col-md-12 text-primary">
-                <table id="student-table" class="table">
+                <table id="student-card" class="table">
                     <thead class="text-dark">
                         <tr>
                             <th>Fecha</th>
-                            <th>Estado</th>
                             <th>Ver</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($scores as $score)
+                        <tr>
+                            <td>{{$score->created_at}}</td>
+                            <td><button id="view" class="btn btn-primary m-1 view-score" data-id="{{$score->id}}"><i class="fa fa-eye" aria-hidden="true"></i></button></td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

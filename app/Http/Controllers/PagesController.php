@@ -29,6 +29,11 @@ class PagesController extends Controller {
 		$id= Auth::user()['id'];
 		$user= User::findOrFail($id);
 		$courses= $user->signed;
-		return view ('student_card')->with(['user'=>$user, 'courses'=>$courses]);
+		$scores= $user->scores;
+		return view ('student_card')->with(['user'=>$user, 'courses'=>$courses, 'scores'=>$scores]);
+	}
+
+	public function contact(){
+		return view('contact');
 	}
 }

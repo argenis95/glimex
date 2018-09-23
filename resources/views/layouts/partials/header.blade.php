@@ -70,7 +70,7 @@
                                             </li>
                                             @elseif (Utilities::get_user_type()=='student')
                                             <li>
-                                                <a href="/student_card/{{ Auth::user()['id']}}">Mis notas</a>
+                                                <a href="/student_card">Mis notas</a>
                                             </li>
                                             @endif
                                             @if (!Auth::check())

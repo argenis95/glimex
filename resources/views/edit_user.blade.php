@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="card text-dark bg-light mb-3 p-3 text-center">
+<div class="dashboard card text-dark bg-light mb-3 p-3 text-center">
     <div class="card-header bg-primary">
         <p>Editar Usuario</p>
     </div>

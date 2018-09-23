@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Boletín del estudiante')
+@section('title', 'Editar notas')
 
 @section('content')
 <div class="dashboard card text-dark bg-light mb-3 p-3 text-center">

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/test', function(){
     $student= User::find(7);
-    $courses= $student->signed;
+    $courses= $student->scores;
     return $courses;
 });
 
@@ -52,7 +52,6 @@ Route::group(['middleware' => ['instructor']], function()
     Route::get('/scores', 'NotesController@dashboard');
     Route::get('/scores/student/{id}', 'NotesController@notes_manage');
     Route::get('/scores_data/{id}', 'NotesController@notesdata');
-    Route::get('/scores_data/notes/{id}', 'NotesController@notes');
     Route::get('/report_data/{id}', 'NotesController@reportdata');
     Route::get('/scores/edit/{id}', 'NotesController@edit_scores');
     Route::put('/scores/{id}', 'NotesController@edit');
@@ -64,7 +63,7 @@ Route::group(['middleware' => ['student']], function(){
     Route::get('/student_card', 'PagesController@student_card');
 });
 
-
+Route::get('/scores_data/notes/{id}', 'NotesController@notes');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');

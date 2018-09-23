@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="/styles/bootstrap4/bootstrap.min.css">
         <link href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" >
         <link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
         <link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
         <link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.2.1/animate.css">
@@ -35,6 +36,7 @@
         </div>
         @include('layouts.partials.modal-menu')
         @include('layouts.partials.footer')
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjL-wor4RKTbXlXk0TsEUhhE0VSMaZQA4&callback=initMap"></script>
         <script src="/js/Jquery-3.3.1/jquery-3.3.1.min.js"></script>
         <script src="/styles/bootstrap4/popper.js"></script>
         <script src="/styles/bootstrap4/bootstrap.min.js"></script>
@@ -50,5 +52,6 @@
         <script src="/js/companies.js"></script>
         <script src="/js/groups.js"></script>
         <script src="/js/notes.js"></script>
+        <script src="/js/map.js"></script>
     </body>
 </html>
