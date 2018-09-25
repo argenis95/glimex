@@ -113,10 +113,7 @@ p a:hover::after
 	background: #007bff;
 	color: #FFFFFF;
 }
-p::selection
-{
-	
-}
+
 h1{font-size: 48px;}
 h2{font-size: 36px;}
 h3{font-size: 24px;}
@@ -129,15 +126,7 @@ h1, h2, h3, h4, h5, h6
 	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
-h1::selection, 
-h2::selection, 
-h3::selection, 
-h4::selection, 
-h5::selection, 
-h6::selection
-{
-	
-}
+
 .form-control
 {
 	color: #db5246;
@@ -400,7 +389,7 @@ select {
 .menu_item
 {
 	position: relative;
-	margin-bottom: 3px;
+	margin-bottom: 2px;
 }
 .menu_item:last-child
 {
@@ -410,9 +399,9 @@ select {
 {
 	display: inline-block;
 	position: relative;
-	font-size: 36px;
+	font-size: 1rem !important;
 	color: #FFFFFF;
-	font-weight: 600;
+	font-weight: 10rem;
 }
 .menu_item a::after
 {

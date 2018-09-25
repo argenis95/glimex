@@ -324,15 +324,16 @@ color: #838383;
 
 .menu-modal
 {
-	padding: 1rem;
-	box-shadow: 0 0 2px #329fec;
-	
-
+	padding: 3px;
+	border-style:solid;
+	border-color:rgb(154, 227, 230);
+	border-width: 1px;
+	border-radius:2px;
 }
 
 .menu-modal:hover
 {
-	box-shadow: 0 0 5px #329fec;
+	box-shadow: 0 0 5px #fcfeff;
 	background-color: #9cbfec ;
 	color: #007bff !important;
 }

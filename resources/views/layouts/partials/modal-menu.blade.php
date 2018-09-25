@@ -9,83 +9,59 @@
             </div>
             <div class="modal-body">
                 <div class="text-center mb-3 p-3">
-                    @if (Utilities::get_user_type()=='admin')
-                    <div class="row">
-                        <div class="col-sm-12 menu-modal">
+                    <ul>
+                        @if (Utilities::get_user_type()=='admin')
+                        <li class="menu_item menu-modal">
                             <a class="text-primary link-modal" href="/users">Usuarios</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 menu-modal">
+                        </li>
+                        <li class="menu_item menu-modal">
                             <a class="text-primary link-modal" href="/company">Empresas</a>
-                        </div>
-                    </div> 
-                    <div class="row">
-                        <div class="col-sm-12 menu-modal">
+                        </li>
+                        <li class="menu_item menu-modal">
                             <a class="text-primary link-modal" href="/reports">Calificaciones</a>
-                        </div>
-                    </div> 
-                    @elseif (Utilities::get_user_type()=='manager')
-                    <div class="row">
-                        <div class="col-sm-12 menu-modal">
+                        </li>
+                        @elseif (Utilities::get_user_type()=='manager')
+                        <li class="menu_item menu-modal">
                             <a class="text-primary link-modal" href="/groups">Grupos</a>
-                        </div>
-                    </div>
-                    @elseif (Utilities::get_user_type()=='instructor')
-                    <div class="row">
-                        <div class="col-sm-12 menu-modal">
+                        </li>
+                        @elseif (Utilities::get_user_type()=='instructor')
+                        <li class="menu_item menu-modal">
                             <a class="text-primary link-modal" href="/scores">Mis grupos</a>
-                        </div>
-                    </div>
-                    @elseif (Utilities::get_user_type()=='student')
-                    <div class="row">
-                        <div class="col-sm-12 menu-modal">
-                        <a class="text-primary link-modal" href="/student_card">Mis notas</a>
-                        </div>
-                    </div>
-                    @endif
-                    @if (!Auth::check())
-                    <div class="row">
-                        <div class="col-sm-12 menu-modal">
+                        </li>
+                        @elseif (Utilities::get_user_type()=='student')
+                        <li class="menu_item menu-modal">
+                            <a class="text-primary link-modal" href="/student_card">Mis notas</a>
+                        </li>
+                        @endif
+                        @if (!Auth::check())
+                        <li class="menu_item menu-modal">
                             <a class="text-primary link-modal" href="/">Inicio</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 menu-modal">
+                        </li>
+                        <li class="menu_item menu-modal">
                             <a class="text-primary link-modal" href="/about">Acerca de nosotros</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 menu-modal">
+                        </li>
+                        <li class="menu_item menu-modal">
                             <a class="text-primary link-modal" href="/services">Servicios</a>
-                        </div>
-                    </div>
-                    @endif
-                    <br>
-                    <br>
-                    @if (Auth::check())
-                    <div class="row">
-                        <div class="col-sm-12 menu-modal">
+                        </li>
+                        @endif
+                        <br>
+                        <br>
+                        @if (Auth::check())
+                        <li class="menu_item menu-modal">
                             <a class="text-primary link-modal" href="/account_config">Editar cuenta</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 menu-modal">
+                        </li>
+                        <li class="menu_item menu-modal">
                             <a class="text-primary link-modal" href="/logout">Cerrar sesión</a>
-                        </div>
-                    </div>
-                    @else
-                    <div class="row">
-                        <div class="col-sm-12 menu-modal">
+                        </li>
+                        @else
+                        <li class="menu_item menu-modal">
                             <a class="text-primary link-modal" href="/login">Acceder</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 menu-modal">
+                        </li>
+                        <li class="menu_item menu-modal">
                             <a class="text-primary link-modal" href="/contact">Contacto</a>
-                        </div>
-                    </div>
-                    @endif
+                        </li> 
+                        @endif
+                    </ul>
                 </div>
             </div>
         </div>
