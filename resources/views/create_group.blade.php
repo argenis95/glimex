@@ -32,6 +32,18 @@
             </div>
             <div class="row p-3">
                 <div class="col-md-6">
+                        Seleccione la compañía:
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control" name="company" id="select">
+                        @foreach ($companies as $company)
+                        <option value="{{ $company->id }}">{{ $company->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="row p-3">
+                <div class="col-md-6">
                     Alumnos:
                 </div>
                 <div class="col-md-3">

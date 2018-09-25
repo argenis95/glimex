@@ -14,22 +14,14 @@
         </div>
     </div>
     <div class="card-body bg-white">
-        <table id="scores" class="table table-secondary text-dark">
+        <table id="group-scores" class="table table-secondary text-dark">
             <thead>
                 <tr>
-                    <th>Empresa</th>
                     <th>Grupo</th>
                     <th>Acción</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($courses as $course)
-                <tr>
-                    <td>{{$course->companie['name']}}</td>
-                    <td>{{$course->name}}</td>
-                    <td><button id="view" class="btn btn-primary m-1 view" data-id="{{$course->id}}"><i class="fa fa-eye" aria-hidden="true"></i></button></td>
-                </tr>
-                @endforeach
             </tbody>
         </table>
     </div>

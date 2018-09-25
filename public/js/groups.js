@@ -11,23 +11,16 @@ $(function(){
             type: "GET",
         },
         columns: [
-            { data: 'name', name: 'Compañía'},
-            {
-                render: function (data, type, row, meta){
-                    var html='';
-                    for (var i=0; i<row.courses.length; i++){
-                        var group = row.courses[i];
-                        html += '<tr>';
-                        html += '<td>' + group.name + '</td>';
-                        html += '<td>';
-                        html += '<button class="btn btn-warning m-1 edit" data-id="' + group.id+ '"><i class="fa fa-pencil" aria-hidden="true"></i></button>' + '<button class="btn btn-danger m-1 delete" data-id="' + group.id+ '"><i class="fa fa-trash" aria-hidden="true"></i></button>';
-                        html += '</td>';
-                        html += '</tr>';
-                    }
-                    return html;
+            { data: 'course', name: 'Grupos'},
+            { render:   function (data, type, row, meta){
+                return '<button  class="btn btn-warning m-1 edit" data-id="' +row.id+ '"><i class="fa fa-pencil" aria-hidden="true"></i></button>' 
+                +'<button class="btn btn-danger m-1 delete" data-id="' +row.id+ '"><i class="fa fa-trash" aria-hidden="true"></i></button>';
                 }
             }
         ],
+        rowGroup: {
+            dataSrc: 'company'
+        }
     });
     $('#groups').on('click', '.edit', function() {
         var id = $(this).attr('data-id');

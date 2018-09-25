@@ -150,14 +150,23 @@ class GroupController extends Controller {
 
 	public function groupdata()
 	{
-		$user_id= Auth::user()['id'];
+		/*$user_id= Auth::user()['id'];
 		$user_companies= User::with('companies', 'companies.courses')->find($user_id);
 		$companies=array();
 		foreach ($user_companies->companies as $userCompany)
 		{
 			array_push($companies, $userCompany);
-		}
-		return $companies;
+		}*/
+		$user_id= Auth::user()['id'];
+		$data= DB::table('users')
+		->select('courses.id', 'companies.name as company', 'courses.name as course')
+		->join('companies_managers', 'users.id', '=', 'companies_managers.manager_id')
+		->join('companies', 'companies.id', '=', 'companies_managers.company_id')
+		->join('courses', 'courses.company_id', '=', 'companies.id')
+		->where('users.id','=', $user_id)
+		->whereNull('courses.deleted_at')
+		->get();
+		return $data;
 	}
 
 	public function create_group()
@@ -166,7 +175,10 @@ class GroupController extends Controller {
 		{
 			$instructors=User::where('user_type_id', '=', '3')->get();
 			$students=User::where('user_type_id', '=', '4')->get();
-			return view ('create_group')->with(['instructors'=>$instructors, 'students'=>$students]);
+			$user_id=Auth::user()['id'];
+			$manager=User::find($user_id);
+			$companies=$manager->companies;
+			return view ('create_group')->with(['instructors'=>$instructors, 'students'=>$students, 'companies'=>$companies]);
 		}
 		catch(Exception $e)
 		{
@@ -177,11 +189,13 @@ class GroupController extends Controller {
 	public function register_group()
 	{	
 		$name=Request::input('name');
-		$instructor_id=Request::input('instructor');
+		$instructor=Request::input('instructor');
+		$company=Request::input('company');
 		$students=Request::input('student_list_selected');
 		$group= new Course;
 		$group->name=$name;
 		$group->instructor_id=$instructor;
+		$group->company_id=$company;
 		$group->save();
 		foreach ((array)$students as $student)
 		{
@@ -190,7 +204,8 @@ class GroupController extends Controller {
 			$course_user->student_id=$student;
 			$course_user->save();
 		}
-	}
+		return redirect('/groups')->with('message', 'Grupo creado con éxito');
+		}
 
 	public function edit_group($id)
 	{

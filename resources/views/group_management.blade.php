@@ -34,8 +34,8 @@
                 <table id="groups" class="display text-dark">
                     <thead>
                         <tr>
-                            <th>Compañía</th>
                             <th>Grupos</th>
+                            <th>Acción</th> 
                         </tr>
                     </thead>
                 </table>

@@ -18,6 +18,7 @@
         <link rel="stylesheet" type="text/css" href="/styles/responsive.css">
         <link rel="stylesheet" type="text/css" href="/DataTables/datatables.min.css"/>
         <link rel="stylesheet" type="text/css" href="/DataTables/Responsive-2.2.2/css/responsive.dataTables.min.css"/>
+        <link rel="stylesheet" type="text/css" href="/DataTables/RowGroup-1.0.3/css/rowGroup.dataTables.min.css"/>
     </head>
     <body>
         <div class='super-container'>
@@ -36,7 +37,6 @@
         </div>
         @include('layouts.partials.modal-menu')
         @include('layouts.partials.footer')
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjL-wor4RKTbXlXk0TsEUhhE0VSMaZQA4&callback=initMap"></script>
         <script src="/js/Jquery-3.3.1/jquery-3.3.1.min.js"></script>
         <script src="/styles/bootstrap4/popper.js"></script>
         <script src="/styles/bootstrap4/bootstrap.min.js"></script>
@@ -46,12 +46,12 @@
         <script src="/plugins/parallax-js-master/parallax.min.js"></script>
         <script type="text/javascript" src="/DataTables/datatables.min.js"></script>
         <script type="text/javascript" src="/DataTables/Responsive-2.2.2/js/dataTables.responsive.min.js"></script>
+        <script type="text/javascript" src="/DataTables/RowGroup-1.0.3/js/dataTables.rowGroup.min.js"></script>
         <script src="/js/responsive-menu.js"></script>
         <script src="/js/custom.js"></script>
         <script src="/js/users.js"></script> 
         <script src="/js/companies.js"></script>
         <script src="/js/groups.js"></script>
         <script src="/js/notes.js"></script>
-        <script src="/js/map.js"></script>
     </body>
 </html>

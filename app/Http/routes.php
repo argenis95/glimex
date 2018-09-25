@@ -50,6 +50,7 @@ Route::group(['middleware' => ['manager']], function()
 Route::group(['middleware' => ['instructor']], function()
 {
     Route::get('/scores', 'NotesController@dashboard');
+    Route::get('/students_data', 'NotesController@studentsdata');
     Route::get('/scores/student/{id}', 'NotesController@notes_manage');
     Route::get('/scores_data/{id}', 'NotesController@notesdata');
     Route::get('/report_data/{id}', 'NotesController@reportdata');

@@ -20,6 +20,18 @@ class NotesController extends Controller {
 		return view ('notes_management')->with('courses', $courses);
 	}
 
+	public function studentsdata(){
+		$user_id= Auth::user()['id'];
+		$data= DB::table('users')
+		->select('courses.id', 'companies.name as company', 'courses.name as course')
+		->join('courses', 'courses.instructor_id', '=', 'users.id')
+		->join('companies', 'companies.id', '=', 'courses.company_id')
+		->where('users.id','=', $user_id)
+		->whereNull('courses.deleted_at')
+		->get();
+		return $data;
+	}
+
 	public function notes_manage($id)
 	{
 		$student= User::find($id);

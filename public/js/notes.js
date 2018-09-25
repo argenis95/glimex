@@ -1,5 +1,38 @@
 $(function(){
-    $(".view").click(function(){
+    $('#group-scores').DataTable({
+        responsive: true,
+        columnDefs: [
+            { responsivePriority: 1, targets: 0 },
+            { responsivePriority: 2, targets: -1 }
+        ],
+        ajax: {
+            url: "/students_data",
+            dataSrc: '',
+            type: "GET",
+        },
+        columns: [
+            { data: 'course', name: 'Grupos'},
+            { render:   function (data, type, row, meta){
+                return '<button id="view" class="btn btn-primary m-1 view" data-id="'+row.id+'"><i class="fa fa-eye" aria-hidden="true"></i></button>'
+                }
+            }
+        ],
+        rowGroup: {
+            dataSrc: 'company'
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+$(function(){
+    $(document).on('click', '.view', function(){
         var id=$(this).attr('data-id');
         $.get('/scores_data/' + id, function(students ){
             var html='';
@@ -13,16 +46,13 @@ $(function(){
             }
             $('#students_group').html(html);
             $('#modal-list-students').modal('show');
-        }
-        
-        );
-    })
-
-    $("#close").click(function(){
-        $('#modal-list-students').modal('hide');
-        var html='';
-        $('#students_group').html(html);
-    })
+        } );
+        $("#close").click(function(){
+            $('#modal-list-students').modal('hide');
+            var html='';
+            $('#students_group').html(html);
+        })
+    });
 
         
 })
