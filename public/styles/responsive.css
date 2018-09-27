@@ -195,6 +195,10 @@
 		padding-top: 150px !important;
 	}
 
+	.errorlog{
+		margin-top: 150px !important;
+	}
+
 	.personal{
 		width: 100% !important;
 	}
@@ -335,6 +339,10 @@
 	.dashboard {
 		padding-top: 150px !important;
 	}
+	.errorlog {
+		margin-top: 150px !important;
+	}
+
 
 	.personal{
 		width: 100% !important;

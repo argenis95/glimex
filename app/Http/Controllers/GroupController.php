@@ -29,7 +29,7 @@ class GroupController extends Controller {
 	{
 		try 
 		{
-			$managers= User::where('user_type_id', '=', '2')->get();
+			$managers= User::where('user_type_id', '=', '2')->whereNull('deleted_at')->get();
 			return view('create_company')->with('managers', $managers);
 		}
 		catch(Exception $e)
@@ -74,16 +74,17 @@ class GroupController extends Controller {
 			->select('users.id', 'companies.id as compID', 'users.name', 'users.last_name', 'companies.name as company')
 			->leftJoin('companies_managers', 'users.id', '=', 'companies_managers.manager_id')
 			->leftJoin('companies', 'companies.id', '=', 'companies_managers.company_id')
+			->whereNull('users.deleted_at')
 			->where('users.user_type_id','=', '2')
 			->whereNull('companies.id')
 			->orWhere('companies.id', '<>', $id)
 			->where(function($query) use ($employees){
 				
 				foreach ($employees as $employ)
-			   {
-				   $query->where('users.name', '<>', $employ->name);
-			   }
-		   })
+			   	{
+					$query->where('users.name', '<>', $employ->name);
+			   	}
+		   	})
 			->groupBy('users.name')
 			->get();
 			$company= Company::findOrFail($id);
@@ -150,13 +151,6 @@ class GroupController extends Controller {
 
 	public function groupdata()
 	{
-		/*$user_id= Auth::user()['id'];
-		$user_companies= User::with('companies', 'companies.courses')->find($user_id);
-		$companies=array();
-		foreach ($user_companies->companies as $userCompany)
-		{
-			array_push($companies, $userCompany);
-		}*/
 		$user_id= Auth::user()['id'];
 		$data= DB::table('users')
 		->select('courses.id', 'companies.name as company', 'courses.name as course')
@@ -173,8 +167,8 @@ class GroupController extends Controller {
 	{	
 		try
 		{
-			$instructors=User::where('user_type_id', '=', '3')->get();
-			$students=User::where('user_type_id', '=', '4')->get();
+			$instructors=User::where('user_type_id', '=', '3')->whereNull('deleted_at')->get();
+			$students=User::where('user_type_id', '=', '4')->whereNull('deleted_at')->get();
 			$user_id=Auth::user()['id'];
 			$manager=User::find($user_id);
 			$companies=$manager->companies;
@@ -186,11 +180,11 @@ class GroupController extends Controller {
 		}	
 	}
 
-	public function register_group()
+	public function register_group(Request $request)
 	{	
 		$name=Request::input('name');
-		$instructor=Request::input('instructor');
-		$company=Request::input('company');
+		$instructor= Request::input('instructor');
+		$company= Request::input('company');
 		$students=Request::input('student_list_selected');
 		$group= new Course;
 		$group->name=$name;
@@ -205,23 +199,31 @@ class GroupController extends Controller {
 			$course_user->save();
 		}
 		return redirect('/groups')->with('message', 'Grupo creado con éxito');
-		}
+	} 
 
 	public function edit_group($id)
 	{
 		try
 		{	
-			$instructors=User::where('user_type_id', '=', '3')->get();
+			$instructors=User::where('user_type_id', '=', '3')->whereNull('deleted_at')->get();
 			$student_list= Course::find($id)->students;
 			$unsigned= DB::table('users')
 			->select('users.id', 'courses.id as cID', 'users.name', 'users.last_name', 'courses.name as course')
 			->leftJoin('courses_users', 'users.id', '=', 'courses_users.student_id')
 			->leftJoin('courses', 'courses.id', '=', 'courses_users.course_id')
 			->where('users.user_type_id','=', '4')
+			->whereNull('users.deleted_at')
 			->whereNull('courses.id')
-			->orWhere('courses.id', '<>', $id)
 			->where(function($query) use ($student_list){
-				
+				foreach ($student_list as $student)
+			    {
+				   $query->where('users.name', '<>', $student->name);
+			    }
+		   	})
+			->orWhere('courses.id', '<>', $id)
+			->where('users.user_type_id','=', '4')
+			->whereNull('users.deleted_at')
+			->where(function($query) use ($student_list){
 				foreach ($student_list as $student)
 			    {
 				   $query->where('users.name', '<>', $student->name);

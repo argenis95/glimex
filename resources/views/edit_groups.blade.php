@@ -40,7 +40,7 @@
                     Alumnos disponibles
                     <select multiple class="form-control" name="student_list[]" id="select1">
                         @foreach ($unsigned as $signed)
-                        <option value="{{ $signed->id }}">{{ $signed->name }} {{ $signed->last_name }}</option>
+                        <option class="option" value="{{ $signed->id }}">{{ $signed->name }} {{ $signed->last_name }}</option>
                         @endforeach
                     </select>
                     <button class="btn btn-primary btn-md m-1" id="add">Agregar<i class="fa fa-caret-right p-1" aria-hidden="true"></i></button>
@@ -49,7 +49,7 @@
                     Alumnos inscritos en el grupo
                     <select multiple class="form-control" name="student_list_selected[]" id="select2">
                         @foreach ($students as $student)
-                        <option id="option" value="{{ $student->id }}">{{ $student->name }} {{ $student->last_name }}</option>
+                        <option class="option" value="{{ $student->id }}">{{ $student->name }} {{ $student->last_name }}</option>
                         @endforeach
                     </select>
                     <button class="btn btn-primary btn-md m-1" id="remove"><i class="fa fa-caret-left p-1" aria-hidden="true"></i>Quitar</button>

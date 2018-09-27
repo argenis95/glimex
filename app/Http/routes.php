@@ -5,9 +5,25 @@ use App\Course;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/test', function(){
-    $student= User::find(7);
-    $courses= $student->scores;
-    return $courses;
+    $users=Course::find(16)->students;
+    $unsigned= DB::table('users')
+			->select('users.id', 'courses.id as cID', 'users.name', 'users.last_name', 'courses.name as course')
+			->leftJoin('courses_users', 'users.id', '=', 'courses_users.student_id')
+			->leftJoin('courses', 'courses.id', '=', 'courses_users.course_id')
+            ->where('users.user_type_id','=', '4')
+            ->whereNull('users.deleted_at')
+			->where(function($query) use ($users){
+				
+				foreach ($users as $user)
+			    {
+				   $query->where('users.id', '!=', $user->id);
+			    }
+		   	})
+			->whereNull('courses.id')
+			->orWhere('courses.id', '<>', 16)
+			->groupBy('users.name')
+			->get();
+    return $unsigned;
 });
 
 Route::group(['middleware' => ['admin']], function()

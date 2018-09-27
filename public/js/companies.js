@@ -61,7 +61,7 @@ $(function(){
         return !$('#select2 option:selected').remove().appendTo('#select1');  
     });  
     $('#add_company').submit(function(){
-        $('option').prop("selected", "selected");
+        $('.option').prop("selected", "selected");
     });
     $('#add_company').submit(function(){
         var sel=$('#select2').val();
@@ -74,7 +74,7 @@ $(function(){
         return true;
     })
     $('#edit_company').submit(function(){
-        $('#option').prop("selected", "selected");
+        $('.option').prop("selected", "selected");
     });
     $('#edit_company').submit(function(){
         var sel=$('#select2').val();

@@ -4,7 +4,8 @@
 use App\Http\Controllers\Controller;
 use App\User;
 use App\User_Type;
-use Auth, Request, Input, Hash, Mail, Utilities, Exception;
+use App\Company_Manager;
+use Auth, Request, Input, Hash, Mail, Utilities, Exception, Session, DB;
 
 
 class UserController extends Controller {
@@ -15,7 +16,12 @@ class UserController extends Controller {
 	}
 	public function userdata()
 	{
-		return User::all();
+		$users=DB::table('users')
+		->select('users.id', 'user_types.name as type', 'users.name', 'users.last_name', 'users.email')
+		->join('user_types', 'users.user_type_id', '=', 'user_types.id')
+		->whereNull ('deleted_at')
+		->get();
+		return $users;
 	}
 	public function create_user(){
 		try 
@@ -86,14 +92,21 @@ class UserController extends Controller {
 	public function delete($id)
 	{
 		$user= User::findOrFail($id);
-		$user->delete();
-		if ($user->user_type_id==='2')
+		if ($user->user_type_id != '1')
 		{
-			$relations= Company_Manager::where('manager_id', '=', $id);
-			$relations->delete();
+			$user->delete();
+			if ($user->user_type_id==='2')
+			{
+				$relations= Company_Manager::where('manager_id', '=', $id);
+				$relations->delete();
+			}
+		}
+		else {
+			Session::flash('error', 'No se puede eliminar a un administrador. Pruebe a retirar los privilegios y a intentar de nuevo');
 		}
 		
 	}
+	
 
 	public function ask_password_recovery()
 	{

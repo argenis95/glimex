@@ -14,7 +14,7 @@ $(function(){
             { data: 'name', name: 'Nombre'},
             { data: 'last_name', name: 'Apellido'},
             { data: 'email', name: 'Email'},
-            { data: 'user_type_id', name: 'Tipo'},
+            { data: 'type', name: 'Tipo'},
             { 
                 render:   function (data, type, row, meta){
                 return '<button  class="btn btn-warning m-1 edit" data-id="' +row.id+ '"><i class="fa fa-pencil" aria-hidden="true"></i></button>'
@@ -48,7 +48,7 @@ $(function(){
                         url: '/users/'+ id,
                         success: function(){
                             $(location).attr('href', '/users');
-                        }
+                        },
                     });
                 }
             }

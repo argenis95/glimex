@@ -23,7 +23,7 @@
                         Seleccione el instructor:
                 </div>
                 <div class="col-md-6">
-                    <select class="form-control" name="instructor" id="select">
+                    <select class="form-control" name="instructor" id="select_instructor">
                         @foreach ($instructors as $instructor)
                         <option value="{{ $instructor->id }}">{{ $instructor->name }} {{ $instructor->last_name }}</option>
                         @endforeach
@@ -35,7 +35,7 @@
                         Seleccione la compañía:
                 </div>
                 <div class="col-md-6">
-                    <select class="form-control" name="company" id="select">
+                    <select class="form-control" name="company" id="select_company">
                         @foreach ($companies as $company)
                         <option value="{{ $company->id }}">{{ $company->name }}</option>
                         @endforeach
@@ -50,7 +50,7 @@
                     Alumnos disponibles
                     <select multiple class="form-control" name="student_list[]" id="select1">
                         @foreach ($students as $student)
-                        <option id="option" value="{{ $student->id }}">{{ $student->name }} {{ $student->last_name }}</option>
+                        <option class="option" value="{{ $student->id }}">{{ $student->name }} {{ $student->last_name }}</option>
                         @endforeach
                     </select>
                     <button class="btn btn-primary btn-md m-1" id="add">Agregar<i class="fa fa-caret-right p-1" aria-hidden="true"></i></button>

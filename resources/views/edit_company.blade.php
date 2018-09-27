@@ -27,7 +27,7 @@
                 <div class="col-md-3">
                     <select multiple class="form-control" name="manager_list[]" id="select1">
                         @foreach ($managers as $manager)
-                        <option value="{{ $manager->id }}">{{ $manager->name }} {{ $manager->last_name }}</option>
+                        <option class="option" value="{{ $manager->id }}">{{ $manager->name }} {{ $manager->last_name }}</option>
                         @endforeach
                     </select>
                     <button class="btn btn-primary btn-md m-1" id="add">Agregar<i class="fa fa-caret-right p-1" aria-hidden="true"></i></button>
@@ -35,7 +35,7 @@
                 <div class="col-md-3">
                     <select multiple class="form-control" name="manager_list_selected[]" id="select2">
                         @foreach ($employees as $employ)
-                        <option id="option" value="{{ $employ->id }}">{{ $employ->name }} {{ $employ->last_name }}</option>
+                        <option class="option" id="option" value="{{ $employ->id }}">{{ $employ->name }} {{ $employ->last_name }}</option>
                         @endforeach
                     </select>
                     <button class="btn btn-primary btn-md m-1" id="remove"><i class="fa fa-caret-left p-1" aria-hidden="true"></i>Quitar</button>

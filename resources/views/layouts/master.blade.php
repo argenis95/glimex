@@ -24,12 +24,12 @@
         <div class='super-container'>
             @include('layouts.partials.header')
             @if (Session::has('message'))
-            <div class="rounded message-log text-white bg-success m-3 p-2 font-weight-bold text-center">
+            <div class="errorlog rounded message-log text-white bg-success m-3 p-2 font-weight-bold text-center">
                 {{ Session::get('message')}}
             </div>
             @endif
             @if (Session::has('error'))
-            <div class="rounded message-log text-white bg-danger m-3 p-2 font-weight-bold text-center">
+            <div class="errorlog rounded message-log text-white bg-danger m-3 p-2 font-weight-bold text-center">
                 {{ Session::get('error')}}
             </div>
             @endif

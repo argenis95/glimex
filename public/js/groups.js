@@ -2,8 +2,9 @@ $(function(){
     $('#groups').DataTable({
         responsive: true,
         columnDefs: [
-            { responsivePriority: 1, targets: 0 },
-            { responsivePriority: 2, targets: -1 }
+            { responsivePriority: 1, targets: 2},
+            { responsivePriority: 0, targets: 1 },
+            { responsivePriority: 2, targets: 0}
         ],
         ajax: {
             url: "/groups_datatables",
@@ -11,7 +12,8 @@ $(function(){
             type: "GET",
         },
         columns: [
-            { data: 'course', name: 'Grupos'},
+            { data: 'company', name: 'Compañía'},
+            { data: 'course', name: 'Grupo'},
             { render:   function (data, type, row, meta){
                 return '<button  class="btn btn-warning m-1 edit" data-id="' +row.id+ '"><i class="fa fa-pencil" aria-hidden="true"></i></button>' 
                 +'<button class="btn btn-danger m-1 delete" data-id="' +row.id+ '"><i class="fa fa-trash" aria-hidden="true"></i></button>';
@@ -64,17 +66,12 @@ $(function(){
     $('#remove').click(function() {  
         return !$('#select2 option:selected').remove().appendTo('#select1');  
     });  
+    
     $('#edit_group').submit(function(){
-        $('option').prop("selected", "selected");
-    });
-    $('#edit_group').submit(function(){
-        $('#option').prop("selected", "selected");
+        $('.option').prop("selected", "selected");
     });
     $('#create_group').submit(function(){
-        $('option').prop("selected", "selected");
-    });
-    $('#create_group').submit(function(){
-        $('#option').prop("selected", "selected");
+        $('.option').prop("selected", "selected");
     });
    
 });  
