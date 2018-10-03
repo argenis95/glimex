@@ -1,29 +1,7 @@
 <?php
-use App\User;
-use App\Company;
-use App\Course;
-use Illuminate\Support\Facades\Auth;
+
 
 Route::get('/test', function(){
-    $users=Course::find(16)->students;
-    $unsigned= DB::table('users')
-			->select('users.id', 'courses.id as cID', 'users.name', 'users.last_name', 'courses.name as course')
-			->leftJoin('courses_users', 'users.id', '=', 'courses_users.student_id')
-			->leftJoin('courses', 'courses.id', '=', 'courses_users.course_id')
-            ->where('users.user_type_id','=', '4')
-            ->whereNull('users.deleted_at')
-			->where(function($query) use ($users){
-				
-				foreach ($users as $user)
-			    {
-				   $query->where('users.id', '!=', $user->id);
-			    }
-		   	})
-			->whereNull('courses.id')
-			->orWhere('courses.id', '<>', 16)
-			->groupBy('users.name')
-			->get();
-    return $unsigned;
 });
 
 Route::group(['middleware' => ['admin']], function()
@@ -50,10 +28,7 @@ Route::group(['middleware' => ['admin']], function()
     Route::get('/reports', 'NotesController@reports');
     Route::get('/get_reports', 'NotesController@all_reports');
     Route::post('/scores/unlock/{id}', 'NotesController@unlock');
-});
 
-Route::group(['middleware' => ['manager']], function()
-{
     Route::get('/groups', 'GroupController@group_management');
     Route::get('/groups_datatables', 'GroupController@groupdata');
     Route::get('/groups/edit/{id}', 'GroupController@edit_group');
@@ -63,15 +38,24 @@ Route::group(['middleware' => ['manager']], function()
     Route::post ('/groups', 'GroupController@register_group');
 });
 
+Route::group(['middleware' => ['manager']], function()
+{
+    Route::get('/groups/view', 'GroupController@my_groups');
+    Route::get('/my_groups_data', 'GroupController@my_groupsdata');
+    Route::get('/groups/view/{id}', 'GroupController@group_reports');
+    Route::get('/group_reportsdata/{id}', 'GroupController@group_reportsdata');
+});
+
+Route::get('/scores/edit/{id}', 'NotesController@edit_scores');
+Route::put('/scores/{id}', 'NotesController@edit');
+Route::get('/scores/student/{id}', 'NotesController@notes_manage');
+
 Route::group(['middleware' => ['instructor']], function()
 {
     Route::get('/scores', 'NotesController@dashboard');
     Route::get('/students_data', 'NotesController@studentsdata');
-    Route::get('/scores/student/{id}', 'NotesController@notes_manage');
     Route::get('/scores_data/{id}', 'NotesController@notesdata');
     Route::get('/report_data/{id}', 'NotesController@reportdata');
-    Route::get('/scores/edit/{id}', 'NotesController@edit_scores');
-    Route::put('/scores/{id}', 'NotesController@edit');
     Route::post('scores/student/{id}', 'NotesController@post');
     Route::get('/scores/create/{id}', 'NotesController@create');
 });

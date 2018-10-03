@@ -6,7 +6,7 @@ class StudentAuth {
 
 	public function handle($request, Closure $next)
 	{
-		if (Utilities::get_user_type() == 'student') 
+		if (Utilities::get_user_type() == 'student' || Utilities::get_user_type() == 'admin') 
 		{
 			return $next($request);
 		}

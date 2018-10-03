@@ -17,6 +17,10 @@ class GroupController extends Controller {
 		return view ('group_management');
 	}
 
+	public function my_groups(){
+		return view ('my_groups');
+	}
+
 	public function company_management(){
 
 		return view ('company_management');
@@ -151,6 +155,15 @@ class GroupController extends Controller {
 
 	public function groupdata()
 	{
+		$data= DB::table('companies')
+		->select('courses.id', 'companies.name as company', 'courses.name as course')
+		->join('courses', 'courses.company_id', '=', 'companies.id')
+		->whereNull('courses.deleted_at')
+		->get();
+		return $data;
+	}
+
+	public function my_groupsdata(){
 		$user_id= Auth::user()['id'];
 		$data= DB::table('users')
 		->select('courses.id', 'companies.name as company', 'courses.name as course')
@@ -163,6 +176,22 @@ class GroupController extends Controller {
 		return $data;
 	}
 
+	public function group_reports($id){
+		$course=Course::findOrFail($id);
+		return view ('group_reports')->with('course', $course);
+
+	}
+	public function group_reportsdata($id){
+		$course_id=$id;
+		$data= DB::table('scores')
+		->select('users.name', 'users.last_name','scores.year', 'scores.month', 'scores.lessons_taken', 'scores.absences', 'scores.times_late', 'scores.fluency', 'scores.pronunciation', 'scores.grammar_word_order', 'scores.vocabulary', 'scores.presentation', 'scores.class_participation', 'scores.homework_assignements', 'scores.writing', 'scores.reading', 'scores.listenning', 'scores.exam', 'scores.final', 'scores.comments', 'scores.updated_at')
+		->join('users', 'users.id', '=', 'scores.student_id')
+		->join('courses', 'courses.id', '=', 'scores.course_id')
+		->where('courses.id','=', $course_id)
+		->get();
+		return $data;
+	}
+
 	public function create_group()
 	{	
 		try
@@ -171,7 +200,7 @@ class GroupController extends Controller {
 			$students=User::where('user_type_id', '=', '4')->whereNull('deleted_at')->get();
 			$user_id=Auth::user()['id'];
 			$manager=User::find($user_id);
-			$companies=$manager->companies;
+			$companies= Company::all();
 			return view ('create_group')->with(['instructors'=>$instructors, 'students'=>$students, 'companies'=>$companies]);
 		}
 		catch(Exception $e)

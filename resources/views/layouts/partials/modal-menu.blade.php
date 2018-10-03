@@ -18,11 +18,14 @@
                             <a class="text-primary link-modal" href="/company">Empresas</a>
                         </li>
                         <li class="menu_item menu-modal">
+                            <a class="text-primary link-modal" href="/groups">Grupos</a>
+                        </li>
+                        <li class="menu_item menu-modal">
                             <a class="text-primary link-modal" href="/reports">Calificaciones</a>
                         </li>
                         @elseif (Utilities::get_user_type()=='manager')
                         <li class="menu_item menu-modal">
-                            <a class="text-primary link-modal" href="/groups">Grupos</a>
+                            <a class="text-primary link-modal" href="/groups/view">Grupos</a>
                         </li>
                         @elseif (Utilities::get_user_type()=='instructor')
                         <li class="menu_item menu-modal">

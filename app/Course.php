@@ -29,4 +29,9 @@ class Course extends Model {
 		return $this->belongsTo('App\User', 'instructor_id', 'id');
 	}
 	
+	public function scores(){
+		return $this->hasMany('App\Score', 'course_id', 'id');
+	}
+	
+	
 }

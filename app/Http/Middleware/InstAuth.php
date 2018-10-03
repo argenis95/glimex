@@ -7,7 +7,7 @@ class InstAuth {
 
 	public function handle($request, Closure $next)
 	{
-		if (Utilities::get_user_type() == 'instructor') 
+		if (Utilities::get_user_type() == 'instructor' || Utilities::get_user_type() == 'admin') 
 		{
 			return $next($request);
 		}

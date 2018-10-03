@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('content')
-<div class="home_container">
+<div class="dashboard home_container">
 		<div class="background_image" style="background-image:url(/images/empresas.jpg)"></div>
         <div class="container">
             <div class="row">

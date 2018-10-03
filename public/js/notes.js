@@ -23,14 +23,6 @@ $(function(){
     });
 });
 
-
-
-
-
-
-
-
-
 $(function(){
     $(document).on('click', '.view', function(){
         var id=$(this).attr('data-id');
@@ -95,7 +87,79 @@ $(function(){
     });
 });
 
+$(function(){
+    $('#reports').DataTable({
+        responsive: true,
+        columnDefs: [
+            { responsivePriority: 1, targets: 0 },
+            { responsivePriority: 2, targets: -1 }
+        ],
+        ajax: {
+            url: "/get_reports",
+            dataSrc: '',
+            type: "GET",
+        },
+        columns: [
+            {   render: function (data, type, row, meta){
+                    var username= row.username;
+                    username += ' ';
+                    username += row.last_name;
+                    return username;
+                }
+            },
+            { data: 'sID', name: 'ID del reporte' },
+            { data: 'created_at', name: 'Fecha' },
+            {   render: function (data, type, row, meta){
+                    if (row.month_lock < '2'){
+                        return '<i class="fa fa-unlock-alt fa-2x pl-1" aria-hidden="true" title="Edición disponible"></i>'
+                    }
+                    else
+                    {
+                        return '<i class="fa fa-lock fa-2x pl-1" aria-hidden="true" title="Edición bloqueada"></i>';
+                    }
+                },
+            },
+            {   render: function (data, type, row, meta){
+                    if (row.month_lock >= '2'){
+                        return '<button class="btn btn-success m-1 unlock" data-id="' +row.sID+ '"><i class="fa fa-key" aria-hidden="true"></i></button>' + '<button class="view-score btn btn-primary m-1" data-id="'+row.sID+'"><i class="fa fa-eye" aria-hidden="true"></i></button>';
+                    }
+                    else
+                    {
+                        return '<button class="btn btn-secondary m-1" data-id="' +row.sID+ '"><i class="fa fa-minus" aria-hidden="true"></i></button>' + '<button class="view-score btn btn-primary m-1" data-id="'+row.sID+'"><i class="fa fa-eye" aria-hidden="true"></i></button>';
+                    }
+                }
+        },
 
+           
+        ],
+    });
+    $('#reports').on('click', '.unlock', function(){
+        var id = $(this).attr('data-id');
+        bootbox.confirm({
+            title: "Desbloquear edición",
+            message: "¿Seguro que quiere desbloquear este boletín?",
+            buttons: {
+                cancel: {
+                    label: '<i class="fa fa-times"></i> Cancelar'
+                },
+                confirm: {
+                    label: '<i class="fa fa-check"></i> Confirmar'
+                }
+            },
+            callback: function (result) {
+                if (result) {
+                    $.ajax({
+                        method: 'POST',
+                        url: '/scores/unlock/'+ id,
+                        success: function(){
+                            $(location).attr('href', '/reports');
+                        }
+                    });
+                }
+            }
+        });
+    })
+});
 
 $(function(){
     $(document).on('click', '.view-score', function(){
@@ -180,77 +244,5 @@ $(function(){
         
 });
 
-$(function(){
-    $('#reports').DataTable({
-        responsive: true,
-        columnDefs: [
-            { responsivePriority: 1, targets: 0 },
-            { responsivePriority: 2, targets: -1 }
-        ],
-        ajax: {
-            url: "/get_reports",
-            dataSrc: '',
-            type: "GET",
-        },
-        columns: [
-            {   render: function (data, type, row, meta){
-                    var username= row.username;
-                    username += ' ';
-                    username += row.last_name;
-                    return username;
-                }
-            },
-            { data: 'sID', name: 'ID del reporte' },
-            { data: 'created_at', name: 'Fecha' },
-            {   render: function (data, type, row, meta){
-                    if (row.month_lock < '2'){
-                        return '<i class="fa fa-unlock-alt fa-2x pl-1" aria-hidden="true" title="Edición disponible"></i>'
-                    }
-                    else
-                    {
-                        return '<i class="fa fa-lock fa-2x pl-1" aria-hidden="true" title="Edición bloqueada"></i>';
-                    }
-                },
-            },
-            {   render: function (data, type, row, meta){
-                    if (row.month_lock >= '2'){
-                        return '<button class="btn btn-success m-1 unlock" data-id="' +row.sID+ '"><i class="fa fa-key" aria-hidden="true"></i></button>';
-                    }
-                    else
-                    {
-                        return '<button class="btn btn-secondary m-1" data-id="' +row.sID+ '"><i class="fa fa-minus" aria-hidden="true"></i></button>';
-                    }
-                }
-        },
 
-           
-        ],
-    });
-    $('#reports').on('click', '.unlock', function(){
-        var id = $(this).attr('data-id');
-        bootbox.confirm({
-            title: "Desbloquear edición",
-            message: "¿Seguro que quiere desbloquear este boletín?",
-            buttons: {
-                cancel: {
-                    label: '<i class="fa fa-times"></i> Cancelar'
-                },
-                confirm: {
-                    label: '<i class="fa fa-check"></i> Confirmar'
-                }
-            },
-            callback: function (result) {
-                if (result) {
-                    $.ajax({
-                        method: 'POST',
-                        url: '/scores/unlock/'+ id,
-                        success: function(){
-                            $(location).attr('href', '/reports');
-                        }
-                    });
-                }
-            }
-        });
-    })
-});
 

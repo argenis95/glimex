@@ -6,7 +6,7 @@ class ManagerAuth {
 
 	public function handle($request, Closure $next)
 	{
-		if (Utilities::get_user_type() == 'manager') 
+		if (Utilities::get_user_type() == 'manager' || Utilities::get_user_type() == 'admin') 
 		{
 			return $next($request);
 		}

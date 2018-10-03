@@ -57,12 +57,15 @@
                                                 <a href="/company">Empresas</a>
                                             </li>
                                             <li>
+                                                <a href="/groups">Grupos</a>
+                                            </li>
+                                            <li>
                                                 <a href="/reports">Calificaciones</a>
                                             </li>
                                             </li>
                                             @elseif (Utilities::get_user_type()=='manager')
                                             <li>
-                                                <a href="/groups">Grupos</a>
+                                                <a href="/groups/view">Grupos</a>
                                             </li>
                                             @elseif (Utilities::get_user_type()=='instructor')
                                             <li>
