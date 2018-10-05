@@ -184,7 +184,7 @@ class GroupController extends Controller {
 	public function group_reportsdata($id){
 		$course_id=$id;
 		$data= DB::table('scores')
-		->select('users.name', 'users.last_name','scores.year', 'scores.month', 'scores.lessons_taken', 'scores.absences', 'scores.times_late', 'scores.fluency', 'scores.pronunciation', 'scores.grammar_word_order', 'scores.vocabulary', 'scores.presentation', 'scores.class_participation', 'scores.homework_assignements', 'scores.writing', 'scores.reading', 'scores.listenning', 'scores.exam', 'scores.final', 'scores.comments', 'scores.updated_at')
+		->select('scores.id', 'users.name', 'users.last_name','scores.year', 'scores.month', 'scores.lessons_taken', 'scores.absences', 'scores.times_late', 'scores.fluency', 'scores.pronunciation', 'scores.grammar_word_order', 'scores.vocabulary', 'scores.presentation', 'scores.class_participation', 'scores.homework_assignements', 'scores.writing', 'scores.reading', 'scores.listenning', 'scores.exam', 'scores.final', 'scores.comments', 'scores.updated_at')
 		->join('users', 'users.id', '=', 'scores.student_id')
 		->join('courses', 'courses.id', '=', 'scores.course_id')
 		->where('courses.id','=', $course_id)

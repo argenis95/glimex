@@ -143,5 +143,10 @@ class NotesController extends Controller {
 		return redirect ($url.= $score->student_id);
 	}
 
+	public function search_comments($id){
+		$score=Score::find($id);
+		return $score;
+	}
+
 	
 }

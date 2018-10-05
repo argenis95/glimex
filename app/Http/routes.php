@@ -44,8 +44,10 @@ Route::group(['middleware' => ['manager']], function()
     Route::get('/my_groups_data', 'GroupController@my_groupsdata');
     Route::get('/groups/view/{id}', 'GroupController@group_reports');
     Route::get('/group_reportsdata/{id}', 'GroupController@group_reportsdata');
+    Route::get('/scores/{id}', 'NotesController@search_comments');
 });
 
+Route::get ('/back', 'PagesController@back');
 Route::get('/scores/edit/{id}', 'NotesController@edit_scores');
 Route::put('/scores/{id}', 'NotesController@edit');
 Route::get('/scores/student/{id}', 'NotesController@notes_manage');
