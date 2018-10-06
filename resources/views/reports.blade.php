@@ -13,16 +13,81 @@
         </div>
     </div>
     <div class="col-sm-12 table-container card-body bg-white">
-        <table id="reports" class="display text-dark">
+        <table id="reports" class="display text-dark cell-border">
             <thead>
                 <tr>
-                    <th>Estudiante</th>
+                    <th class="query">Estudiante</th>
+                    <th class="query">Año</th>
+                    <th class="query">Mes</th>
+                    <th class="query">Grupo</th>
                     <th>ID del reporte</th>
-                    <th>Fecha</th>
                     <th>Estatus</th>
                     <th>Acción</th>
                 </tr>
             </thead>
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <table class="table display table-hover table-bordered text-dark" id="average-table" >
+            <thead>
+                <tr class="display text-dark ">
+                    <th>Evaluación</th>
+                    <th>Promedio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="display text-dark">
+                    <td>Fluency</td>
+                    <td id="f" class="font-weight-bold"></td>
+                </tr>
+                <tr class="display text-dark">
+                    <td>Pronunciation</td>
+                    <td id="p" class="font-weight-bold"></td>
+                </tr>
+                <tr class="display text-dark">
+                    <td>Grammar</td>
+                    <td id="g" class="font-weight-bold"></td>
+                </tr>
+                <tr class="display text-dark">
+                    <td>Vocabulary</td>
+                    <td id="v" class="font-weight-bold"></td>
+                </tr>
+                <tr class="display text-dark">
+                    <td>Presentation</td>
+                    <td id="pr" class="font-weight-bold"></td>
+                </tr>
+                <tr class="display text-dark">
+                    <td>Class participation</td>
+                    <td id="cp" class="font-weight-bold"></td>
+                </tr>
+                <tr class="display text-dark">
+                    <td>Homework</td>
+                    <td id="hw" class="font-weight-bold"></td>
+                </tr>
+                <tr class="display text-dark">
+                    <td>Writing</td>
+                    <td id="w" class="font-weight-bold"></td>
+                </tr>
+                <tr class="display text-dark">
+                    <td>Reading</td>
+                    <td id="r" class="font-weight-bold"></td>
+                </tr>
+                <tr class="display text-dark">
+                    <td>Listenning</td>
+                    <td id="l" class="font-weight-bold"></td>
+                </tr>
+                <tr class="display text-dark">
+                    <td>Exam</td>
+                    <td id="ex" class="font-weight-bold"></td>
+                </tr>
+                <tr class="display text-dark">
+                    <td>Final</td>
+                    <td id="final" class="font-weight-bold"></td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>

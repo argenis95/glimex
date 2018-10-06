@@ -11,18 +11,18 @@
     <form  method="POST" action="/groups" id="create_group">
         <div class="card-body">
             <div class="row p-3">
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-6">
                     Nombre
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6  col-sm-6">
                     <input type="text" class="form-control" name="name" placeholder="Nombre" required/>
                 </div>
             </div>
             <div class="row p-3">
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-6">
                         Seleccione el instructor:
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-6">
                     <select class="form-control" name="instructor" id="select_instructor">
                         @foreach ($instructors as $instructor)
                         <option value="{{ $instructor->id }}">{{ $instructor->name }} {{ $instructor->last_name }}</option>
@@ -31,10 +31,10 @@
                 </div>
             </div>
             <div class="row p-3">
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-6">
                         Seleccione la compañía:
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-6">
                     <select class="form-control" name="company" id="select_company">
                         @foreach ($companies as $company)
                         <option value="{{ $company->id }}">{{ $company->name }}</option>
@@ -43,10 +43,10 @@
                 </div>
             </div>
             <div class="row p-3">
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-6">
                     Alumnos:
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 col-sm-3">
                     Alumnos disponibles
                     <select multiple class="form-control" name="student_list[]" id="select1">
                         @foreach ($students as $student)
@@ -55,7 +55,7 @@
                     </select>
                     <button class="btn btn-primary btn-md m-1" id="add">Agregar<i class="fa fa-caret-right p-1" aria-hidden="true"></i></button>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 col-sm-3">
                     Alumnos inscritos en el grupo
                     <select multiple class="form-control" name="student_list_selected[]" id="select2">
                     </select>
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 col-sm-12">
                     <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
                 </div>
             </div>

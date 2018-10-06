@@ -138,6 +138,8 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 		'App\Providers\UtilitiesServiceProvider',
+		'Maatwebsite\Excel\ExcelServiceProvider',
+
 
 	],
 
@@ -189,6 +191,8 @@ return [
 		'Form'      => 'Illuminate\Html\FormFacade',
 		'Html'      => 'Illuminate\Html\FormFacade',
 		'Utilities' => 'App\Facades\Utilities',
+		'Excel' => 'Maatwebsite\Excel\Facades\Excel'
+
 
 	],
 

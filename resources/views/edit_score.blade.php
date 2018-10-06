@@ -207,19 +207,25 @@
             </div>
             <input type="hidden" class="form-control" name="score_id" value ="" required/>
             <div class="row">
-                <div class="col-md-3 col-sm-3">
+                <div class="col-md-4 col-sm-4">
                 </div>
-                <div class="col-md-3 col-sm-3">
-                 <a href="/scores/student/{{ $student->id }}"><button class="btn btn-primary btn-lg">Volver atrás</button></a>
-                </div>
-                <div class="col-md-3 col-sm-3">
+                <div class="col-md-4 col-sm-4">
                     <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
                 </div>
-                <div class="col-md-3 col-sm-3">
+                <div class="col-md-4 col-sm-4">
                 </div>
             </div>
         </div>
     </form>
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <a href="/scores/student/{{ $student->id }} "><button class="btn btn-primary btn-lg">Volver atrás</button></a>
+        </div>
+        <div class="col-md-4 col-sm-4">
+        </div>
+    </div>
 </div>
 
 

@@ -13,51 +13,54 @@
     </div>
     <div class="card-body bg-white text-dark">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4">
             </div>
-            <div class="col-md-2">
-                <p class="text-dark">Nombre:</p>
+            <div class="col-md-2 col-sm-4">
+                <p class="text-dark">Alumno</p>
             </div>
-            <div class="col-md-4">
-                <p class="text-primary">{{ $student['name']}} {{$student['last_name']}}</p>
+            <div class="col-md-4 col-sm-4">
+                <p class="text-dark font-weight-bold">{{ $student['name']}} {{$student['last_name']}}</p>
             </div>
-            <div class="col-md-2">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-            </div>
-            <div class="col-md-2">
-                <p class="text-dark">Grupos:</p>
-            </div>
-            <div class="col-md-4">
-                @foreach ($courses as $course)
-                <p class="text-primary">
-                    {{ $course->name }} {{ $course->companies}}
-                </p>
-                @endforeach
-            </div>
-            <div class="col-md-2">
+            <div class="col-md-2 col-sm-2">
             </div>
         </div>
 
     </div>
-    <div class="card-header text-primary text-center mb-3 p-3">
+    <div class="card-header text-center mb-3 p-3">
         <div class="row">
-            <div class="col-md-12 ">
-                <p class="font-weight-bold text-primary">Calificaciones</p>
+            <div class="col-md-12 col-sm-12">
+                <p class="font-weight-bold text-dark">Calificaciones</p>
             </div>
         </div>
     </div>
     <div class="card-body bg-white text-dark">
         <div class="row">       
-            <div class="col-md-12 text-primary">
-                <table id="notes-table" class="table">
+            <div class="col-md-12 col-sm-12">
+                <table id="notes-table" class="table display cell-border">
                     <thead class="text-dark">
                         <tr>
-                            <th>Fecha</th>
+                            <th class="query">Grupo</th>
+                            <th class="query">Año</th>
+                            <th class="query">Mes</th>
+                            <th>Lessons taken</th>
+                            <th>Absences</th>
+                            <th>Times late</th>
+                            <th>Fluency</th>
+                            <th>Pronunciation</th>
+                            <th>Grammar</th>
+                            <th>Vocabulary</th>
+                            <th>Presentation</th>
+                            <th>Class participation</th>
+                            <th>Homework</th>
+                            <th>Writing</th>
+                            <th>Reading</th>
+                            <th>Listenning</th>
+                            <th>Exam</th>
+                            <th>Final</th>
+                            <th>Comments</th>
+                            <th>Actualizado</th>
                             <th>Estado</th>
-                            <th>Ver</th>
+                            <th>Acción</th>  
                         </tr>
                     </thead>
                     <tbody>
@@ -65,24 +68,82 @@
                 </table>
             </div>
         </div>
-    </div>   
+    </div> 
+    <div class="p-4">
+        <div class="row">
+            <div class="col-md-8 col-sm-8">
+            </div>
+            <div class="col-md-2 col-sm-2">
+            </div>
+            <div class="col-md-2 col-sm-2">
+                <a href="/scores/create/{{ $student->id }}" title="Crear nuevo boletín">
+                    <button class="btn-register btn btn-primary">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>  
+    <table class="table display table-hover table-bordered text-dark" id="average-table" >
+        <thead>
+            <tr class="display text-dark ">
+                <th>Evaluación</th>
+                <th>Promedio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="display text-dark">
+                <td>Fluency</td>
+                <td id="f" class="font-weight-bold"></td>
+            </tr>
+            <tr class="display text-dark">
+                <td>Pronunciation</td>
+                <td id="p" class="font-weight-bold"></td>
+            </tr>
+            <tr class="display text-dark">
+                <td>Grammar</td>
+                <td id="g" class="font-weight-bold"></td>
+            </tr>
+            <tr class="display text-dark">
+                <td>Vocabulary</td>
+                <td id="v" class="font-weight-bold"></td>
+            </tr>
+            <tr class="display text-dark">
+                <td>Presentation</td>
+                <td id="pr" class="font-weight-bold"></td>
+            </tr>
+            <tr class="display text-dark">
+                <td>Class participation</td>
+                <td id="cp" class="font-weight-bold"></td>
+            </tr>
+            <tr class="display text-dark">
+                <td>Homework</td>
+                <td id="hw" class="font-weight-bold"></td>
+            </tr>
+            <tr class="display text-dark">
+                <td>Writing</td>
+                <td id="w" class="font-weight-bold"></td>
+            </tr>
+            <tr class="display text-dark">
+                <td>Reading</td>
+                <td id="r" class="font-weight-bold"></td>
+            </tr>
+            <tr class="display text-dark">
+                <td>Listenning</td>
+                <td id="l" class="font-weight-bold"></td>
+            </tr>
+            <tr class="display text-dark">
+                <td>Exam</td>
+                <td id="ex" class="font-weight-bold"></td>
+            </tr>
+            <tr class="display text-dark">
+                <td>Final</td>
+                <td id="final" class="font-weight-bold"></td>
+            </tr>
+        </tbody>
+    </table>    
 </div>
-<div class="dashboard p-4">
-    <div class="row">
-        <div class="col-md-8 col-sm-8">
-        </div>
-        <div class="col-md-2 col-sm-2">
-        </div>
-        <div class="col-md-2 col-sm-2">
-            <a href="/scores/create/{{ $student->id }}" title="Crear nuevo boletín">
-                <button class="btn-register btn btn-primary">
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                </button>
-            </a>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="modal-list-notes" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+<div class="modal fade" id="modal-student" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -94,31 +155,17 @@
                 <div class="card-header bg-primary text-light text-center mb-3 p-3">
                     <div class="row">
                         <div class="col-md-12">
-                            <h5 class="font-weight-bold">Calificaciones</h5>
+                            <h5 class="font-weight-bold">Comentarios</h5>
                         </div>
                     </div>
                 </div>
-                <table id="students" class="table text-dark">
-                    <thead>
-                        <tr>
-                            <th>Evaluado</th>
-                            <th>Nota</th>
-                        </tr>
-                    </thead>
-                    <tbody id="notes-show">
-                    </tbody>
-                </table>
-                <div class="text-dark text-center font-weight-bold">
-                    Comentarios
+                <div class="text-dark text-center" id="student-comments">
                 </div>
-                <div class="text-dark text-center" id="comments">
-                </div>
-            </div>
-            <div class="modal-footer">    
             </div>
         </div>
     </div>
 </div>
+
 
 @endsection
 

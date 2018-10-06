@@ -36,6 +36,12 @@ class PagesController extends Controller {
 	public function contact(){
 		return view('contact');
 	}
+	
+	public function student_log(){
+		$id=Auth::user()['id'];
+		$url='/student_card/';
+		return redirect ($url.=$id);
+	}
 
 	public function back(){
 		return redirect()->back();

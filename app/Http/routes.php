@@ -28,6 +28,7 @@ Route::group(['middleware' => ['admin']], function()
     Route::get('/reports', 'NotesController@reports');
     Route::get('/get_reports', 'NotesController@all_reports');
     Route::post('/scores/unlock/{id}', 'NotesController@unlock');
+    Route::delete('/scores/delete/{id}', 'NotesController@delete');
 
     Route::get('/groups', 'GroupController@group_management');
     Route::get('/groups_datatables', 'GroupController@groupdata');
@@ -44,13 +45,10 @@ Route::group(['middleware' => ['manager']], function()
     Route::get('/my_groups_data', 'GroupController@my_groupsdata');
     Route::get('/groups/view/{id}', 'GroupController@group_reports');
     Route::get('/group_reportsdata/{id}', 'GroupController@group_reportsdata');
-    Route::get('/scores/{id}', 'NotesController@search_comments');
+    
 });
 
 Route::get ('/back', 'PagesController@back');
-Route::get('/scores/edit/{id}', 'NotesController@edit_scores');
-Route::put('/scores/{id}', 'NotesController@edit');
-Route::get('/scores/student/{id}', 'NotesController@notes_manage');
 
 Route::group(['middleware' => ['instructor']], function()
 {
@@ -63,7 +61,11 @@ Route::group(['middleware' => ['instructor']], function()
 });
 
 Route::group(['middleware' => ['student']], function(){
-    Route::get('/student_card', 'PagesController@student_card');
+    Route::get('/student_card/{id}', 'PagesController@student_card');
+    Route::get('/student_note_data/{id}', 'NotesController@student_card');
+    Route::get('/student_card/', 'PagesController@student_log');
+
+
 });
 
 Route::get('/scores_data/notes/{id}', 'NotesController@notes');
@@ -76,12 +78,15 @@ Route::get('/allegiances', 'PagesController@alle');
 
 Route::group(['middleware'=> ['authcheck']], function()
 {
-
     Route::get('/logout', 'AuthController@logout');
     Route::get('/account_config', 'UserController@edit_account');
     Route::put('/account_config/{id}', 'UserController@edit_info');
     Route::put('/change_password/{id}', 'UserController@edit_pass');
-
+    Route::get('/scores/edit/{id}', 'NotesController@edit_scores');
+    Route::put('/scores/{id}', 'NotesController@edit');
+    Route::get('/scores/student/{id}', 'NotesController@notes_manage');
+    Route::get('/scores/{id}', 'NotesController@search_comments');
+    Route::get('/scores/{id}/excel', 'NotesController@excel');
 });
     
 Route::group(['middleware' => ['logincheck']], function()

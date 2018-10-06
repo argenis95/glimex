@@ -78,19 +78,26 @@ class GroupController extends Controller {
 			->select('users.id', 'companies.id as compID', 'users.name', 'users.last_name', 'companies.name as company')
 			->leftJoin('companies_managers', 'users.id', '=', 'companies_managers.manager_id')
 			->leftJoin('companies', 'companies.id', '=', 'companies_managers.company_id')
-			->whereNull('users.deleted_at')
+			->whereNull('companies.id')	
 			->where('users.user_type_id','=', '2')
-			->whereNull('companies.id')
-			->orWhere('companies.id', '<>', $id)
+			->whereNull('users.deleted_at')
 			->where(function($query) use ($employees){
-				
-				foreach ($employees as $employ)
-			   	{
-					$query->where('users.name', '<>', $employ->name);
-			   	}
-		   	})
+				foreach ($employees as $employ){
+					$query->where('users.id', '<>', $employ->id);
+				}
+			})		 
+			->orWhere('companies.id', '<>', $id)
+			->where('users.user_type_id','=', '2')
+			->whereNull('users.deleted_at')
+			->whereNull('companies.id')	
+			->where(function($query) use ($employees){
+				foreach ($employees as $employ){
+					$query->where('users.id', '<>', $employ->id);
+				}
+			})	
 			->groupBy('users.name')
 			->get();
+			
 			$company= Company::findOrFail($id);
 			return view ('edit_company')->with(['company'=>$company, 'employees'=>$employees, 'managers'=>$managers]);
 		}

@@ -17,13 +17,15 @@ class AuthController extends Controller {
     {
         $email = Request::input('email');
         $password=Request::input('password');
+        $id= Auth::user()['id'];
+        $url= '/student_card/';
         if (Auth::attempt(['email' => $email, 'password' => $password]))
         {
             switch (Utilities::get_user_type()){
                 case 'admin': return redirect('/users');
                 case 'manager': return redirect ('/groups/view');
                 case 'instructor': return redirect ('/scores');
-                case 'student': return redirect ('/student_card');
+                case 'student': return redirect ($url.=$id);
             }
           
         }

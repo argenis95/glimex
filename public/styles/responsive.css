@@ -113,6 +113,7 @@
 
 @media only screen and (max-width: 991px)
 {
+	}
 	.background-image{
 		margin-top: 3rem !important;
 	}
@@ -205,7 +206,7 @@
 	.password{
 		width: 100% !important;
 	}
-}
+
 
 /************
 7. 959px
@@ -252,6 +253,11 @@
 
 @media only screen and (max-width: 575px)
 {
+
+	.map2{
+		width: 75% !important;
+		height:75% !important;
+	}
 	.background-image{
 		margin-top: 3rem !important;
 	}

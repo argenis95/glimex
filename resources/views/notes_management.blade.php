@@ -17,6 +17,7 @@
         <table id="group-scores" class="table table-secondary text-dark">
             <thead>
                 <tr>
+                    <th>Empresa</th>
                     <th>Grupo</th>
                     <th>Acción</th>
                 </tr>

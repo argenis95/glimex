@@ -33,7 +33,7 @@
                         </li>
                         @elseif (Utilities::get_user_type()=='student')
                         <li class="menu_item menu-modal">
-                            <a class="text-primary link-modal" href="/student_card">Mis notas</a>
+                            <a class="text-primary link-modal" href="/student_card/{{ Auth::user()['id']}}">Mis notas</a>
                         </li>
                         @endif
                         @if (!Auth::check())

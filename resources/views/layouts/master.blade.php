@@ -54,5 +54,6 @@
         <script src="/js/companies.js"></script>
         <script src="/js/groups.js"></script>
         <script src="/js/notes.js"></script>
+        <script src="/js/calc.js"></script>
     </body>
 </html>

@@ -14,10 +14,38 @@
                 <div class="col-md-2 col-sm-2">
                 </div>
                 <div class="col-md-4 col-sm-4 p-2">
+                    Seleccione el año y el mes
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <input type="text" class="form-control" name="year" id="year" pattern="^(((\d{1,3})(,\d{3})*)|(\d+))(.\d+)?$" title="Inserte un año válido" required/>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <select name="month" id="month">
+                        <option value="Enero">Enero</option>
+                        <option value="Febrero">Febrero</option>
+                        <option value="Marzo">Marzo</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Mayo">Mayo</option>
+                        <option value="Junio">Junio</option>
+                        <option value="Julio">Julio</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Septiembre">Septiembre</option>
+                        <option value="Octubre">Octubre</option>
+                        <option value="Noviembre">Noviembre</option>
+                        <option value="Diciembre">Diciembre</option>
+                    </select>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                </div>
+            </div>
+            <div class="row p-3">
+                <div class="col-md-2 col-sm-2">
+                </div>
+                <div class="col-md-4 col-sm-4 p-2">
                     Lessons taken
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <input type="text" class="form-control" name="lessons"/>
+                    <input type="text" class="form-control" name="lessons" id="lessons" pattern="^(((\d{1,3})(,\d{3})*)|(\d+))(.\d+)?$" title="Inserte una cifra válida" required/>
                 </div>
                 <div class="col-md-3 col-sm-3">
                 </div>
@@ -29,7 +57,7 @@
                     Absences
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <input type="text" class="form-control" name="absences"/>
+                    <input type="text" class="form-control" name="absences" id="absences" pattern="^(((\d{1,3})(,\d{3})*)|(\d+))(.\d+)?$" title="Inserte una cifra válida" required/>
                 </div>
                 <div class="col-md-3 col-sm-3">
                 </div>
@@ -41,7 +69,7 @@
                     Times late
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <input type="text" class="form-control" name="times_late"/>
+                    <input type="text" class="form-control" name="times_late" id="times_late" pattern="^(((\d{1,3})(,\d{3})*)|(\d+))(.\d+)?$" title="Inserte una cifra válida" required/>
                 </div>
                 <div class="col-md-3 col-sm-3">
                 </div>
@@ -53,7 +81,7 @@
                     Fluency
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <input type="text" class="form-control" name="fluency"/>
+                    <input type="text" class="form-control" name="fluency" id="fluency" pattern="^(((\d{1,3})(,\d{3})*)|(\d+))(.\d+)?$" title="Inserte una calificación válida" required/>
                 </div>
                 <div class="col-md-3 col-sm-3">
                 </div>
@@ -65,7 +93,7 @@
                     Pronunciation
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <input type="text" class="form-control" name="pronunciation"/>
+                    <input type="text" class="form-control" name="pronunciation" id="pronunciation" pattern="^(((\d{1,3})(,\d{3})*)|(\d+))(.\d+)?$" title="Inserte una calificación válida" required/>
                 </div>
                 <div class="col-md-3 col-sm-3">
                 </div>
@@ -77,7 +105,7 @@
                     Grammar and Word Order
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <input type="text" class="form-control" name="grammar"/>
+                    <input type="text" class="form-control" name="grammar" id="grammar" pattern="^(((\d{1,3})(,\d{3})*)|(\d+))(.\d+)?$" title="Inserte una calificación válida" required/>
                 </div>
                 <div class="col-md-3 col-sm-3">
                 </div>
@@ -89,7 +117,7 @@
                     Vocabulary
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <input type="text" class="form-control" name="vocabulary"/>
+                    <input type="text" class="form-control" name="vocabulary" id="vocabulary" pattern="^(((\d{1,3})(,\d{3})*)|(\d+))(.\d+)?$" title="Inserte una calificación válida" required/>
                 </div>
                 <div class="col-md-3 col-sm-3">
                 </div>
@@ -101,7 +129,7 @@
                     Presentation
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <input type="text" class="form-control" name="presentation"/>
+                    <input type="text" class="form-control" name="presentation" id="presentation" pattern="^(((\d{1,3})(,\d{3})*)|(\d+))(.\d+)?$" title="Inserte una calificación válida" required/>
                 </div>
                 <div class="col-md-3 col-sm-3">
                 </div>
@@ -113,7 +141,7 @@
                     Class participation
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <input type="text" class="form-control" name="participation"/>
+                    <input type="text" class="form-control" name="participation" id="participation" pattern="^(((\d{1,3})(,\d{3})*)|(\d+))(.\d+)?$" title="Inserte una calificación válida" required/>
                 </div>
                 <div class="col-md-3 col-sm-3">
                 </div>
@@ -125,7 +153,7 @@
                     Homework and assignements
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <input type="text" class="form-control" name="homework"/>
+                    <input type="text" class="form-control" name="homework" id="homework" pattern="^(((\d{1,3})(,\d{3})*)|(\d+))(.\d+)?$" title="Inserte una calificación válida" required/>
                 </div>
                 <div class="col-md-3 col-sm-3">
                 </div>
@@ -137,7 +165,7 @@
                     Writing
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <input type="text" class="form-control" name="writing"/>
+                    <input type="text" class="form-control" name="writing" id="writting" pattern="^(((\d{1,3})(,\d{3})*)|(\d+))(.\d+)?$" title="Inserte una calificación válida" required/>
                 </div>
                 <div class="col-md-3 col-sm-3">
                 </div>
@@ -149,7 +177,7 @@
                     Reading
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <input type="text" class="form-control" name="reading"/>
+                    <input type="text" class="form-control" name="reading" id="reading" pattern="^(((\d{1,3})(,\d{3})*)|(\d+))(.\d+)?$" title="Inserte una calificación válida" required/>
                 </div>
                 <div class="col-md-3 col-sm-3">
                 </div>
@@ -161,7 +189,7 @@
                     Listenning
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <input type="text" class="form-control" name="listenning"/>
+                    <input type="text" class="form-control" name="listenning" id="listenning" pattern="^(((\d{1,3})(,\d{3})*)|(\d+))(.\d+)?$" title="Inserte una calificación válida" required/>
                 </div>
                 <div class="col-md-3 col-sm-3">
                 </div>
@@ -173,7 +201,7 @@
                     Exam
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <input type="text" class="form-control" name="exam"/>
+                    <input type="text" class="form-control" name="exam" id="exam" pattern="^(((\d{1,3})(,\d{3})*)|(\d+))(.\d+)?$" title="Inserte una calificación válida" required/>
                 </div>
                 <div class="col-md-3 col-sm-3">
                 </div>
@@ -185,7 +213,7 @@
                     Final
                 </div>
                 <div class="col-md-3 col-sm-3">
-                    <input type="text" class="form-control" name="final"/>
+                    <input type="text" class="form-control" name="final" id="final" pattern="^(((\d{1,3})(,\d{3})*)|(\d+))(.\d+)?$" title="Inserte una calificación válida" required/>
                 </div>
                 <div class="col-md-3 col-sm-3">
                 </div>
@@ -206,18 +234,24 @@
             </div>
             <input type="hidden" class="form-control" name="student_id" value ="{{ $student->id }}" required/>
             <div class="row">
-                <div class="col-md-3 col-sm-3">
+                <div class="col-md-4 col-sm-4">
                 </div>
-                <div class="col-md-3 col-sm-3">
-                 <a href="/scores/student/{{ $student->id }}"><button class="btn btn-primary btn-lg">Volver atrás</button></a>
-                </div>
-                <div class="col-md-3 col-sm-3">
+                <div class="col-md-4 col-sm-4">
                     <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
                 </div>
-                <div class="col-md-3 col-sm-3">
+                <div class="col-md-4 col-sm-4">
                 </div>
             </div>
         </div>
     </form>
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <a href="/scores/student/{{ $student->id }} "><button class="btn btn-primary btn-lg">Volver atrás</button></a>
+        </div>
+        <div class="col-md-4 col-sm-4">
+        </div>
+    </div>
 </div>
 @endsection
