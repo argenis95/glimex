@@ -42,6 +42,22 @@
                 <div class="col-md-2 col-sm-2">
                 </div>
                 <div class="col-md-4 col-sm-4 p-2">
+                    Seleccione el grupo
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <select name="course" id="course">
+                        @foreach ($courses as $course)
+                        <option value="{{ $course->id }}">{{ $course->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                </div>
+            </div>
+            <div class="row p-3">
+                <div class="col-md-2 col-sm-2">
+                </div>
+                <div class="col-md-4 col-sm-4 p-2">
                     Lessons taken
                 </div>
                 <div class="col-md-3 col-sm-3">

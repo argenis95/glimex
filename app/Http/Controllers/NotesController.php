@@ -93,7 +93,12 @@ class NotesController extends Controller {
 		$score->month_lock= ++$score->month_lock;
 		$score->save();
 		$url='/scores/student/';
-		return redirect ($url.= $score->student_id)->with('message', 'Boletín editado con éxito');
+		if (Utilities::get_user_type()=='instructor'){
+			return redirect ($url.= $score->student_id)->with('message', 'Boletín editado con éxito');
+		}
+		else {
+			return redirect ('/reports');
+		}
 
 	}
 
@@ -124,7 +129,8 @@ class NotesController extends Controller {
 
 	public function create($id){
 		$student=User::findOrFail($id);
-		return view ('create_note')->with('student', $student);
+		$courses=$student->signed;
+		return view ('create_note')->with(['student'=> $student, 'courses'=>$courses]);
 	}
 
 	public function student_card($id){
@@ -140,6 +146,7 @@ class NotesController extends Controller {
 	public function post(){
 		$input= Request::all();
 		$score= new Score;
+		$score->course_id=$input['course'];
 		$score->year=$input['year'];
 		$score->month=$input['month'];
 		$score->lessons_taken=$input['lessons'];

@@ -221,7 +221,11 @@
         <div class="col-md-4 col-sm-4">
         </div>
         <div class="col-md-4 col-sm-4">
+        @if (Utilities::get_user_type()=='admin')
+            <a href="/reports "><button class="btn btn-primary btn-lg">Volver atrás</button></a>
+        @elseif (Utilities::get_user_type()=='instructor')
             <a href="/scores/student/{{ $student->id }} "><button class="btn btn-primary btn-lg">Volver atrás</button></a>
+        @endif
         </div>
         <div class="col-md-4 col-sm-4">
         </div>

@@ -60,7 +60,8 @@
                             <th>Comments</th>
                             <th>Actualizado</th>
                             <th>Estado</th>
-                            <th>Acción</th>  
+                            <th>Acción</th> 
+                            <th>Promediar</th> 
                         </tr>
                     </thead>
                     <tbody>

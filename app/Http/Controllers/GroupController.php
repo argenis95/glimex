@@ -88,8 +88,7 @@ class GroupController extends Controller {
 			})		 
 			->orWhere('companies.id', '<>', $id)
 			->where('users.user_type_id','=', '2')
-			->whereNull('users.deleted_at')
-			->whereNull('companies.id')	
+			->whereNull('users.deleted_at')	
 			->where(function($query) use ($employees){
 				foreach ($employees as $employ){
 					$query->where('users.id', '<>', $employ->id);

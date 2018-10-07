@@ -113,13 +113,7 @@ $(function(){
     var url = window.location.pathname;
     var id = url.substring(url.lastIndexOf('/')+ 1);
     $('#group-reports').DataTable({  
-        responsive: true,
-        columnDefs: [
-            { responsivePriority: 0, targets: 18},
-            { responsivePriority: 1, targets: 19},
-            { responsivePriority: 1, targets: 21},
-            { responsivePriority: 0, targets: 0}
-        ],
+        "scrollX": true,
         ajax: {
             url: "/group_reportsdata/" + id,
             dataSrc: '',

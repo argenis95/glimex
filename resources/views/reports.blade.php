@@ -23,6 +23,7 @@
                     <th>ID del reporte</th>
                     <th>Estatus</th>
                     <th>Acción</th>
+                    <th>Promediar</th>
                 </tr>
             </thead>
         </table>
@@ -33,9 +34,10 @@
         <br>
         <table class="table display table-hover table-bordered text-dark" id="average-table" >
             <thead>
+                <!--<input type="checkbox" id="check-all" class="avg-calc-all">-->
                 <tr class="display text-dark ">
                     <th>Evaluación</th>
-                    <th>Promedio</th>
+                    <th>Promedio </th>
                 </tr>
             </thead>
             <tbody>

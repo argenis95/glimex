@@ -58,13 +58,7 @@ $(function(){
     var url = window.location.pathname;
     var id = url.substring(url.lastIndexOf('/')+ 1);
     $('#notes-table').DataTable({
-        responsive: true,
-        columnDefs: [
-            { responsivePriority: 0, targets: 18},
-            { responsivePriority: 1, targets: 19},
-            { responsivePriority: 1, targets: 21},
-            { responsivePriority: 0, targets: 0}
-        ],
+        "scrollX": true,
         ajax: {
             url: "/report_data/" + id ,
             dataSrc: '',
@@ -109,14 +103,18 @@ $(function(){
             },
             {
                 render: function (data, type, row, meta){
-                    var html='';
                     var bloq= row.month_lock;
                     if (bloq < '2'){
-                        return '<a href="/scores/edit/'+row.id+'"><button type="button" class="btn btn-warning m-1"><i class="fa fa-pencil" aria-hidden="true"></i></button></a>'+'<input type="checkbox" title="Seleccione para agregar esta calificación al promedio" id="'+row.id+'" class="avg-calc" data-id="'+row.id+'">';
+                        return '<a href="/scores/edit/'+row.id+'"><button type="button" class="btn btn-warning m-1"><i class="fa fa-pencil" aria-hidden="true"></i></button></a>';
                     }
                     else{
-                        return '<button class="btn btn-secondary m-1" data-id="' +row.id+ '"><i class="fa fa-minus" aria-hidden="true"></i></button>' + '<input type="checkbox" title="Seleccione para agregar esta calificación al promedio" id="'+row.id+'" class="avg-calc" data-id="'+row.id+'">';
+                        return '<button class="btn btn-secondary m-1" data-id="' +row.id+ '"><i class="fa fa-minus" aria-hidden="true"></i></button>';
                     }
+                }
+            },
+            {
+                render: function (data, type, row, meta){
+                    return '<div class="text-center"><input type="checkbox" title="Seleccione para agregar esta calificación al promedio" id="'+row.id+'" class="avg-calc" data-id="'+row.id+'"></div>';
                 }
             }
         ],
@@ -184,16 +182,20 @@ $(function(){
             },
             {   render: function (data, type, row, meta){
                     if (row.month_lock >= '2'){
-                        return '<button class="btn btn-success m-1 unlock" data-id="' +row.sID+ '"><i class="fa fa-key" aria-hidden="true"></i></button>' + '<button class="view-score btn btn-primary m-1" data-id="'+row.sID+'"><i class="fa fa-eye" aria-hidden="true"></i></button>' + '<button class="delete-score btn btn-danger m-1" data-id="'+row.sID+'"><i class="fa fa-trash" aria-hidden="true"></i></button>'+ '<input type="checkbox" title="Seleccione para agregar esta calificación al promedio" id="'+row.id+'" class="avg-calc" data-id="'+row.id+'">';
+                        return '<button class="btn btn-success m-1 unlock" data-id="' +row.sID+ '"><i class="fa fa-key" aria-hidden="true"></i></button>' + '<button class="view-score btn btn-primary m-1" data-id="'+row.sID+'"><i class="fa fa-eye" aria-hidden="true"></i></button>' + '<button class="delete-score btn btn-danger m-1" data-id="'+row.sID+'"><i class="fa fa-trash" aria-hidden="true"></i></button>';
                     }
                     else
                     {
-                        return '<button class="btn btn-secondary m-1" data-id="' +row.sID+ '"><i class="fa fa-minus" aria-hidden="true"></i></button>' + '<button class="view-score btn btn-primary m-1" data-id="'+row.sID+'"><i class="fa fa-eye" aria-hidden="true"></i></button>' + '<button class="delete-score btn btn-danger m-1" data-id="'+row.sID+'"><i class="fa fa-trash" aria-hidden="true"></i></button>' + '<input type="checkbox" title="Seleccione para agregar esta calificación al promedio" id="'+row.id+'" class="avg-calc" data-id="'+row.id+'">';
+                        return '<button class="btn btn-secondary m-1" data-id="' +row.sID+ '"><i class="fa fa-minus" aria-hidden="true"></i></button>' + '<button class="view-score btn btn-primary m-1" data-id="'+row.sID+'"><i class="fa fa-eye" aria-hidden="true"></i></button>' + '<button class="delete-score btn btn-danger m-1" data-id="'+row.sID+'"><i class="fa fa-trash" aria-hidden="true"></i></button>';
                     }
-                }
-        },
-
-           
+                }, orderable: false,
+                
+            }, 
+            {
+                render: function (data, type, row, meta){
+                    return '<div class="text-center"><input type="checkbox" title="Seleccione para agregar esta calificación al promedio" id="'+row.id+'" class="avg-calc" data-id="'+row.id+'"></div>';
+                }, orderable: false,
+            }  
         ],
     });
     $('#reports').on('click', '.unlock', function(){
@@ -443,6 +445,17 @@ $(function(){
         });
     });
 });
+
+$(function(){
+    $('#check-all').click(function(){
+        if ($(this).id('checked')){
+            $('.avg-calc').checked= true;
+        }
+        else{
+            $('.avg-calc').checked= false;
+        }
+    })
+})
 
 
 
